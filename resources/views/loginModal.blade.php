@@ -5,7 +5,7 @@
                 <div class="w-100 float-to-right mx-2">
                     <a class="headline-1 align-bottom">
                         MediSync
-                        <img width="48" height="48" src="/images/logo.png">
+                        <img width="48" height="48" src="{{ asset('images/logo.png')}}">
                     </a>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

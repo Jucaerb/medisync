@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <img width="550" height="550" src="/images/doctora.png">
+                    <img width="550" height="550" src="{{ asset('images/doctora.png')}}">
                 </div>
             </div>
         </div>

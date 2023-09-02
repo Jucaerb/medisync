@@ -5,7 +5,7 @@
                 <div class="col-md-4 col-xl-5">
                     <div class="pr-xl-4"><br class="brand" href="index.html">
                         <!-- Foto del logo de nosotros -->
-                        <img width="48" height="48" src="/images/logo.png"><br>
+                        <img width="48" height="48" src="{{ asset('images/logo.png')}}"><br>
                         <p class="headline-1">MediSync</p>
                         <p class="only-text-regular">Aplicacion web de monitoreo de pacientes y administración de medicamentos</p>
                         <!-- Rights-->

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex justify-content-start">
             <div>
-                <img width="48" height="48" src="/images/logo.png">
+                <img width="48" height="48" src="{{ asset('images/logo.png')}}">
             </div>
             <div class="ms-4">
                 <a class="headline-1" href="{{ url('/') }}">
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <img  width="300" height="50" src="/images/funcasat.jpg">
+            <img  width="300" height="50" src="{{ asset('images/funcasat.jpg')}}">
         </div>
 
     </div>
