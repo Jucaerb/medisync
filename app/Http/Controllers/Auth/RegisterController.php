@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'full_name' => $data['full_name'],
             'email' => $data['email'],
-            'role' => 'admin',
+            'role' => 'ADMIN',
             'type_identification' => 'CC',
             'identification_number' => '123456789',
             'status' => 'ACTIVE',

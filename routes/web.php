@@ -19,4 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/login', [App\Http\Controllers\HomeController::class, 'login'])->name('login');
+
+Route::middleware(['authUser:ADMIN'])->group( function () {
+    Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
+});
+

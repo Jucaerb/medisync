@@ -22,10 +22,7 @@ class AuthUsers
                     return $next($request);
                 }
             }
-            if (Auth::user()->role == 'ADMIN' || Auth::user()->role == 'CG_ADMIN' ) {
-                return redirect()->route('home');
-            }
-            return redirect()->route('myaplications');
         }
+        return redirect()->route('home');
     }
 }
