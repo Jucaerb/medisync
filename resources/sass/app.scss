@@ -18,30 +18,18 @@ body{
     text-align: left;
 
 }
-@font-face{
-    font-family: PlusJakartaSans-SemiBold;
-    src: url("../fonts/PlusJakartaSans-SemiBold.ttf");
-}
-
-@font-face{
-    font-family: PlusJakartaSans-Regular;
-    src: url("../fonts/PlusJakartaSans-Regular.ttf");
-}
-
-@font-face{
-    font-family: PlusJakartaSans-ExtraBold;
-    src: url("../fonts/PlusJakartaSans-ExtraBold.ttf");
-}
 
 .headline-1{
-    font-family: PlusJakartaSans-SemiBold !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
     text-decoration: none;
     color: black;
     font-size: 28px;
 }
 
 .headline-2{
-    font-family: PlusJakartaSans-ExtraBold;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 800;
     text-decoration: none;
     color: black;
     font-size: 28px;
@@ -175,9 +163,9 @@ footer{
 .button-login {
     width: 140px;
     height: 45px;
-    font-family: 'PlusJakartaSans-Regular';
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
     font-size: 16px;
-    font-weight: 500;
     color: white;
     background-color: #4d6de6;
     border: none;
@@ -209,13 +197,15 @@ footer{
 }
 
 .text-body-small{
-    font-family: PlusJakartaSans-Regular;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
     font-size: 16px !important;
     color: #181e4b;
 }
 
 .only-text-regular{
-    font-family: PlusJakartaSans-Regular;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
     color: grey;
 }
 
