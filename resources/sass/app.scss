@@ -6,3 +6,220 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+
+
+body{
+    margin: opx;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+
+}
+@font-face{
+    font-family: PlusJakartaSans-SemiBold;
+    src: url("/public/fonts/PlusJakartaSans-SemiBold.ttf");
+}
+
+@font-face{
+    font-family: PlusJakartaSans-Regular;
+    src: url("/public/fonts/PlusJakartaSans-Regular.ttf");
+}
+
+@font-face{
+    font-family: PlusJakartaSans-ExtraBold;
+    src: url("/public/fonts/PlusJakartaSans-ExtraBold.ttf");
+}
+
+.headline-1{
+    font-family: PlusJakartaSans-SemiBold !important;
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+}
+
+.headline-2{
+    font-family: PlusJakartaSans-ExtraBold;
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+}
+
+
+.size-login{
+    font-size: 16px !important;
+}
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
+
+.my-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.my-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+
+}
+
+.login-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+a {
+    float: right;
+}
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.purple
+{
+    background-color: #4737FF ;
+    color: #fff
+}
+.icono i{
+    font-size: 10px ;
+}
+
+// footer
+.context-dark, .bg-gray-dark, .bg-primary {
+    color: rgb(0, 0, 0);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #050505;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+}
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #4d6de6;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}
+.card {
+    // max-width: 600px;
+    width: 85%; /* Ancho de la tarjeta */
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+}
+footer{
+    margin-top: auto;
+}
+
+.button-login {
+    width: 140px;
+    height: 45px;
+    font-family: 'PlusJakartaSans-Regular';
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button-login:hover {
+    background-color: #4d6de6;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.float-to-right{
+    float:right !important;
+}
+
+.input-login{
+    border:none;
+    box-shadow: 0px 8px 15px #d9e3fc;
+}
+
+.text-body-big{
+    font-size: 72px !important;
+    color: #181e4b;
+}
+
+.text-body-small{
+    font-family: PlusJakartaSans-Regular;
+    font-size: 16px !important;
+    color: #181e4b;
+}
+
+.only-text-regular{
+    font-family: PlusJakartaSans-Regular;
+    color: grey;
+}
+
+.text-regular-size{
+    font-size: 20px !important;
+}
+

@@ -16,42 +16,31 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    @include('loginModal')
+    <div id="app" class="mt-4">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    MediSync
-                </a>
-                <!-- imagen  -->
-                <div class="d-flex">
-                    <img width="48" height="48" src="/images/logo.png">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
+                <div class="d-flex justify-content-start">
+                    <div>
+                      <img width="48" height="48" src="/images/logo.png">
+                    </div>
+                    <div class="ms-4">
+                        <a class="headline-1" href="{{ url('/') }}">
+                            MediSync
+                        </a>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <img  width="60" height="50" src="/images/funcasat.jpg">
+                    <img  width="300" height="50" src="/images/funcasat.jpg">
                 </div>
 
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                </div>
             </div>
         </nav>
 
         <!-- navbar 2 -->
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mt-2">
             <div class="container">
-
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
@@ -105,47 +94,28 @@
                     <li><a class="dropdown-item" href="#">xxx</a></li>
                     </ul>
                     </div>
-
-
-
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <!-- icono user -->
-                                <!-- boton login redireccionando -->
-                                <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">
-                                <button type="nav-link" href="{{ route('login') }}" class="button purple"><span>
+                                <button type="button" class="button-login" data-bs-toggle="modal" data-bs-target="#login-modal">
                                     Inicia Sesión
-                                <i class="bi bi-person-circle"></i>
-
-                                </span>
-                            </button>
-                                </a>
-
-                            </li>
-
-
-
+                                    <i class="bi bi-person-circle"></i>
+                                </button>
                             @endif
-                            @else
+                        @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->full_name }}
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -158,9 +128,6 @@
         </nav>
         <div>
         </div>
-
-
-
         <main class="py-4">
             @yield('content')
         </main>
@@ -168,72 +135,50 @@
 </head>
 
 <!-- cuerpo -->
-<body>
-<div class="d-flex justify-content-center align-items-center wrapper" >
-<div class="card mb-10">
-  <div class="row g-0 ">
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Mantén actualizado el estado de tus pacientes</h5>
-        <p class="card-text">Con MediSync puedes mantener al dia todos los datos de tus pacientes, al igual que los medicamentos administrados y por administrar. Además de mantener al dia tus inventarios de medicamentos.
-        </p>
 
-      </div>
-    </div>
-    <div class="col-md-4">
-    <img  width="400" height="450" src="/images/viejita.jpg">
-    </div>
-  </div>
-</div>
-</div>
-
-
-</body>
 <!-- FOOTER -->
 <div class="wrapper">
-<footer class="section footer-classic context-dark bg-image shadow-sm" style="background: #fff;">
+    <footer class="section footer-classic context-dark bg-image">
         <div class="container">
-          <div class="row row-30">
-            <div class="col-md-4 col-xl-5">
-              <div class="pr-xl-4"><br class="brand" href="index.html">
-              <!-- Foto del logo de nosotros -->
-              <img width="48" height="48" src="/images/logo.png"><br>
-              <p>MediSync</p>
-              <p>Aplicacion web de monitoreo de pacientes y administración de medicamentos</p>
-                <!-- Rights-->
-                <p class="rights"><span>©  </span><span class="copyright-year"> 2023, </span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved</span></p>
-              </div>
+            <div class="row row-30">
+                <div class="col-md-4 col-xl-5">
+                    <div class="pr-xl-4"><br class="brand" href="index.html">
+                        <!-- Foto del logo de nosotros -->
+                        <img width="48" height="48" src="/images/logo.png"><br>
+                        <p class="headline-1">MediSync</p>
+                        <p class="only-text-regular">Aplicacion web de monitoreo de pacientes y administración de medicamentos</p>
+                        <!-- Rights-->
+                        <p class="rights only-text-regular"><span>©  </span><span class="copyright-year"> 2023, </span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="headline-1 text-regular-size">Nuestros portales</h5>
+                    <dl class="contact-list">
+                        <dd class="only-text-regular">Médico principal</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dd class="only-text-regular">Administrador del sistema</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dd class="only-text-regular">Operativo</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dd class="only-text-regular">Inventario</dd>
+                    </dl>
+                </div>
+                <div class="col-md-4 col-xl-3">
+                    <h5 class="headline-1 text-regular-size">Soporte</h5>
+                    <ul class="nav-list">
+                        <li class="only-text-regular">Manual de uso</li>
+                        <li class="only-text-regular">Whatsapp</li>
+                        <li class="only-text-regular">Blog</li>
+                        <li class="only-text-regular">Contacts</li>
+                        <li class="only-text-regular">Información de contácto</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-4">
-              <h5>Nuestros portales</h5>
-              <dl class="contact-list">
-                <dd>Médico principal</dd>
-              </dl>
-              <dl class="contact-list">
-                <dd>Administrador del sistema</a></dd>
-              </dl>
-              <dl class="contact-list">
-                <dd>Operativo</a></dd>
-              </dl>
-              <dl class="contact-list">
-                <dd>Inventario</a></dd>
-              </dl>
-
-            </div>
-            <div class="col-md-4 col-xl-3">
-              <h5>Soporte</h5>
-              <ul class="nav-list">
-                <li>Manual de uso</a></li>
-                <li>Whatsapp</a></li>
-                <li>Blog</a></li>
-                <li>Contacts</a></li>
-                <li>Información de contácto</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </footer>
-      </div>
-
+    </footer>
+</div>
 
 </html>
