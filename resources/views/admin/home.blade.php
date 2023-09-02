@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="text-center">
-        ESTAS LOGEADO COMO ADMIN, MÁQUINA
+        ESTAS LOGEADO COMO ADMIN
     </div>
 @endsection
