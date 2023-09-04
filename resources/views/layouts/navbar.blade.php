@@ -70,7 +70,8 @@
                         Control de empleados
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">xxx</a></li>
+                        <li><a class="dropdown-item" href="#">Registro</a></li>
+                        <li><a class="dropdown-item" href="{{route('admin.users')}}">Lista de empleados</a></li>
                     </ul>
                 </div>
             </ul>

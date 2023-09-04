@@ -24,3 +24,6 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
     Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 });
 
+Route::middleware(['authUser:ADMIN'])->group( function () {
+    Route::get('/admin/users', [App\Http\Controllers\UsersController::class, 'user'])->name('admin.users');
+});
