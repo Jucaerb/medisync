@@ -8,46 +8,10 @@
 @import 'bootstrap/scss/bootstrap';
 
 
-
-body{
-    margin: opx;
-    font-size: .9rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #212529;
-    text-align: left;
-
-}
-
-.headline-1{
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-weight: 600;
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
-}
-
-.headline-2{
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-weight: 800;
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
-}
-
-
 .size-login{
     font-size: 16px !important;
 }
-.navbar-laravel
-{
-    box-shadow: 0 2px 4px rgba(0,0,0,.04);
-}
 
-.navbar-brand , .nav-link, .my-form, .login-form
-{
-    font-family: Raleway, sans-serif;
-}
 
 .my-form
 {
@@ -102,16 +66,8 @@ a {
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
     color: #050505;
 }
-.nav-list li {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 
-.nav-list li a:hover:before {
-    margin-left: 0;
-    opacity: 1;
-    visibility: visible;
-}
+
 
 ul, ol {
     list-style: none;
@@ -132,25 +88,7 @@ ul, ol {
 .social-container .col {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.nav-list li a:before {
-    content: "\f14f";
-    font: 400 21px/1 "Material Design Icons";
-    color: #4d6de6;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-left: -28px;
-    margin-right: 7px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .22s ease;
-}
-.card {
-    // max-width: 600px;
-    width: 85%; /* Ancho de la tarjeta */
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -194,6 +132,8 @@ footer{
 .text-body-big{
     font-size: 72px !important;
     color: #181e4b;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 800;
 }
 
 .text-body-small{
@@ -212,4 +152,9 @@ footer{
 .text-regular-size{
     font-size: 20px !important;
 }
+.img-responsive{
+    width: 100%;
+    height: auto;
+}
+
 
