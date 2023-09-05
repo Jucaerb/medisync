@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class= "d-flex justify-content-center align-items-center card-home-padding ">
-<div class="card mb-3 border-0 " style="max-width: 1400px;">
+<div class= "d-flex justify-content-center align-items-center p-5">
+<div class="card mb-3 border-0 " style="">
   <div class="row g-0">
     <div class="col-md-8">
       <div class="card-body">

@@ -1,13 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white">
     <div class="container">
         <div class="d-flex justify-content-start">
-            <div>
-                <img width="48" height="48" src="{{ asset('images/logo.png')}}">
-            </div>
             <div class="ms-4">
-                <a class="headline-1" href="{{ url('/') }}">
-                    MediSync
-                </a>
             </div>
         </div>
         <div class="d-flex justify-content-end">
@@ -16,9 +10,9 @@
 
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Menu</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-5 navbar-transparent">
+  <div class="container-fluid navbar-transparent">
+    <a class="navbar-brand" href="#"><img width="48" height="48" src="{{ asset('images/logo.png')}}"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -88,8 +82,8 @@
         </li>
       </ul>
       <button type="button" class="button-login" data-bs-toggle="modal" data-bs-target="#login-modal">
-                            Inicia Sesión
-                            <i class="bi bi-person-circle"></i>
+          Inicia Sesión
+      <i class="bi bi-person-circle"></i>
      </button>
     </div>
   </div>

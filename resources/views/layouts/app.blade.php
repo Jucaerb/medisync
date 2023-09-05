@@ -16,12 +16,12 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @include('loginModal')
     </head>
-    <div id="app" class="mt-4">
+    <div id="app" class="mt-4 margin-navbar">
         @include('layouts.navbar')
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 @include('layouts.footer')
 
 </html>

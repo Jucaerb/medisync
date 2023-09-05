@@ -95,7 +95,7 @@ ul, ol {
     min-height: 40vh;
 }
 footer{
-    margin-top: auto;
+    margin-top: 20px;
 }
 
 .button-login {
@@ -143,6 +143,14 @@ footer{
     color: #181e4b;
 }
 
+.text-body-medium{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 16px !important;
+    color: #181e4b;
+    text-decoration: none;
+}
+
 .only-text-regular{
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 400;
@@ -156,5 +164,13 @@ footer{
     width: 100%;
     height: auto;
 }
+
+.navbar-transparent{
+    background-color: transparent !important;
+}
+ .margin-navbar{
+     margin-left: 40px;
+     margin-right: 40px;
+ }
 
 
