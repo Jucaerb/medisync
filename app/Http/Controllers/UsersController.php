@@ -21,7 +21,7 @@ class UsersController extends Controller
     }
 
     protected function create(){
-        return view('admin.register');
+        return view('admin.registeruser');
     }
 
     protected function save(Resquest $request){
