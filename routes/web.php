@@ -22,12 +22,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['authUser:ADMIN'])->group( function () {
     Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
-});
-
-Route::middleware(['authUser:ADMIN'])->group( function () {
+    Route::get('/admin/register', [App\Http\Controllers\UsersController::class, 'create'])->name('admin.registeruser');
+    Route::post('/admin/store-user', [App\Http\Controllers\UsersController::class, 'save'])->name('admin.storeuser');
     Route::get('/admin/users', [App\Http\Controllers\UsersController::class, 'user'])->name('admin.users');
-});
-
-Route::middleware(['authUser:ADMIN'])->group( function () {
-    Route::get('/admin/register', [App\Http\Controllers\UsersController::class, 'create'])->name('admin.register');
 });

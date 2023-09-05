@@ -9,13 +9,7 @@ class UsersController extends Controller
 {
 
     protected function index() {
-        $users = DB::table('users')
-            ->orderBy('id')
-            ->get();
-
-        return view('admin.users', [
-            'users' => $users
-        ]);
+        return view('admin.home');
     }
 
     protected function user() {
@@ -30,7 +24,7 @@ class UsersController extends Controller
         return view('admin.register');
     }
 
-    protected function  save(Resquest $request){
+    protected function save(Resquest $request){
         $user = DB::table('users')->insert(array(
             'username' => $request->input('username'),
             'password' => $request->input('password'),
