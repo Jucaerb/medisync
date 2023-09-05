@@ -29,5 +29,5 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
 });
 
 Route::middleware(['authUser:ADMIN'])->group( function () {
-    Route::get('/admin/register', [App\Http\Controllers\RegisterTController::class, 'create'])->name('admin.register');
+    Route::get('/admin/register', [App\Http\Controllers\UsersController::class, 'create'])->name('admin.register');
 });
