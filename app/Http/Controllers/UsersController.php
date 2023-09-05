@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
-    public function user() {
+    protected function user() {
         $users = DB::table('users')->get();
 
         return view('admin.users',[
