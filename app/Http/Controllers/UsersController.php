@@ -32,6 +32,7 @@ class UsersController extends Controller
             'email' => $request->input('email'),
             'type_identification' => 'CC',
             'identification_number' => $request->input('identification_number'),
+            'role' => $request->input('role'),
             'status' => "ACTIVE"
         ));
 
