@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,7 +25,8 @@ class UsersController extends Controller
         return view('admin.registeruser');
     }
 
-    protected function save(Resquest $request){
+    protected function save(Request $request){
+//        User::createUser($request);
         $user = DB::table('users')->insert(array(
             'username' => $request->input('username'),
             'password' => $request->input('password'),
@@ -36,7 +38,7 @@ class UsersController extends Controller
             'status' => "ACTIVE"
         ));
 
-        return redirect()->action('UsersController@index')->with('status', 'Usuario creado correctamente');
+        return redirect(route('admin.registeruser'))->with('status', 'Usuario creado correctamente');
     }
 
     protected function deleted($id){

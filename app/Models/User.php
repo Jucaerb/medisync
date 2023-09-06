@@ -47,4 +47,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+//    public static function createUser($request){
+//        return User::Create([
+//            "full_name" => $request->input('username'),
+//        ]);
+//    }
 }

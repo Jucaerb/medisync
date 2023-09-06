@@ -9,23 +9,23 @@
     @csrf
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
-    <input id="full_name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input id="full_name" name="full_name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Usuario</span>
-  <input id="username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input id="username" name="username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Identificación</span>
-  <input id="identification_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input id="identification_number" name="identification_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Correo electrónico</span>
-  <input id="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input id="email" name="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span  class="input-group-text" id="inputGroup-sizing-default">Rol principal</span>
-  <select id="role" class="form-select" aria-label="Default select example">
+  <select id="role" name="role" class="form-select" aria-label="Default select example">
   <option selected>Selecciona una opción </option>
   <option value="DOCTOR">Doctor</option>
   <option value="BOSS_NURSE">Jefe de enfermeria</option>
@@ -37,7 +37,7 @@
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
-  <input id="password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <input id="password" name="password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="inputGroup-sizing-default">Confirmar contraseña</span>
