@@ -26,3 +26,7 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
     Route::post('/admin/store-user', [App\Http\Controllers\UsersController::class, 'save'])->name('admin.storeuser');
     Route::get('/admin/users', [App\Http\Controllers\UsersController::class, 'user'])->name('admin.users');
 });
+
+Route::middleware(['authUser:DOCTOR'])->group(function () {
+  Route::get('/doctor/home', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.home');
+});
