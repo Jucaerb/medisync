@@ -26,17 +26,7 @@ class UsersController extends Controller
     }
 
     protected function save(Request $request){
-//        User::createUser($request);
-        $user = DB::table('users')->insert(array(
-            'username' => $request->input('username'),
-            'password' => $request->input('password'),
-            'full_name' => $request->input('full_name'),
-            'email' => $request->input('email'),
-            'type_identification' => 'CC',
-            'identification_number' => $request->input('identification_number'),
-            'role' => $request->input('role'),
-            'status' => "ACTIVE"
-        ));
+        User::createUser($request);
 
         return redirect(route('admin.registeruser'))->with('status', 'Usuario creado correctamente');
     }

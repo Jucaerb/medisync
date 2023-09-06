@@ -48,9 +48,23 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-//    public static function createUser($request){
-//        return User::Create([
-//            "full_name" => $request->input('username'),
+    public static function createUser($request){
+        return User::Create([
+            "username" => $request->input('username'),
+            "password" => $request->input('password'),
+            "full_name" => $request->input('full_name'),
+            "email" => $request->input('email'),
+            "type_identification" => 'CC',
+            "identification_number" => $request->input('identification_number'),
+            "role" => $request->input('role'),
+            "status" => 'ACTIVE',
+        ]);
+    }
+
+//    public static function deletedUser($request) {
+//        return User::deletedUser([
+//
 //        ]);
 //    }
+
 }
