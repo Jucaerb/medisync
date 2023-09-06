@@ -18,9 +18,28 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
-
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                switch (Auth::user()->role){
+                    case 'DOCTOR':
+                        return redirect('/doctor/home');
+                    break;
+                    case 'BOSS_NURSE':
+                        return redirect('/boss_nurse/home');
+                    break;
+                    case 'NURSE':
+                        return redirect('/nurse/home');
+                    break;
+                    case 'CARER':
+                        return redirect('/carer/home');
+                    break;
+                    case 'INVENTORY':
+                        return redirect('/inventory/home');
+                    break;
+                    case 'ADMIN':
+                        return redirect('/admin/home');
+                    break;
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }
