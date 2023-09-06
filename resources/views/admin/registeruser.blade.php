@@ -44,12 +44,9 @@
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
   <button type="submit" class="btn btn-primary">Crear</button>
-
-  <button type="submit" class="btn btn-primary">Cancelar</button>
-</form>
-</p>
-
-
+<a href="{{route('admin.home')}}" class="btn btn-primary">Cancelar</a>
+    </form>
+    </p>
 
 </div>
 </div>
