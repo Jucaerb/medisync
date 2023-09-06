@@ -28,5 +28,5 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
 });
 
 Route::middleware(['authUser:DOCTOR'])->group(function () {
-  Route::get('/doctor/home', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.home');
+    Route::get('/doctor/home', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.home');
 });
