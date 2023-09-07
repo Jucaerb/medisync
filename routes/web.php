@@ -30,3 +30,19 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
 Route::middleware(['authUser:DOCTOR'])->group(function () {
     Route::get('/doctor/home', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.home');
 });
+
+Route::middleware(['authUser:BOSS_NURSE'])->group( function () {
+    Route::get('/boss_nurse/home', [App\Http\Controllers\BossNurseController::class, 'index'])->name('boss_nurse.home');
+});
+
+Route::middleware(['authUser:NURSE'])->group(function () {
+    Route::get('/nurse/home', [App\Http\Controllers\NurseController::class, 'index'])->name('nurse.home');
+});
+
+Route::middleware(['authUser:CARER'])->group(function () {
+    Route::get('/carer/home', [App\Http\Controllers\CarerController::class, 'index'])->name('carer.home');
+});
+
+Route::middleware(['authUser:INVENTORY'])->group(function () {
+    Route::get('/inventory/home', [App\Http\Controllers\InventoryController::class, 'index'])->name('inventory.home');
+});
