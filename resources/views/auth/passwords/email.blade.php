@@ -2,10 +2,11 @@
 
 @section('content')
 <div class="container">
+<h5 class="card-title text-aling-left text-body-medium2 mb-4 ">Olvidé mi contraseña</h5>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reiniciar contraseña') }}</div>
+                <div class="card-header text-center text-boy-medium  text" >{{ __('Reiniciar contraseña') }}</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

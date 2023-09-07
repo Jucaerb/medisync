@@ -9,7 +9,7 @@
                         <p class="text-body-medium">MediSync</p>
                         <p class="only-text-regular">Aplicacion web de monitoreo de pacientes y administración de medicamentos</p>
                         <!-- Rights-->
-                        <p class="rights only-text-regular"><span>©  </span><span class="copyright-year"> 2023, </span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved</span></p>
+                        <p class="rights only-text-regular"><span>©  </span><span class="copyright-year"> 2023, </span><span> </span><span>CapiCode</span><span>. </span><span>All Rights Reserved</span></p>
                     </div>
                 </div>
                 <div class="col-md-4">
