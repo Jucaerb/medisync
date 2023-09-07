@@ -196,7 +196,7 @@ footer{
  }
 
  .button-body {
-    width: 216px;
+    width: 180px;
     height: 55px;
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 400;
@@ -209,6 +209,14 @@ footer{
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    text-align: center;
+}
+.input-group-text{
+    width: 180px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    color: #000;
+
+
 }
 
 

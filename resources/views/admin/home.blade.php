@@ -9,8 +9,8 @@
         <h5 class="card-title text-body-title">Bienvenido Admin!</h5>
         <p class="card-text text-body-medium2">Registra un nuevo empleado.</p>
         <div class="d-flex justify-content-center">
-        <a href="{{route('admin.registeruser')}}" class="button-body" >
-                            Registrar!&nbsp;&nbsp;
+        <a href="{{route('admin.registeruser')}}" class="button-body " >
+                            Registrar!
         </a>
         </div>
       </div>
