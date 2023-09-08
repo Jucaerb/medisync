@@ -1,14 +1,15 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white">
-    <div class="container">
-        <div class="d-flex justify-content-start">
-            <div class="ms-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container p-0 m-0">
+        <div class="row">
+            <div class="col">
+                 <a class="text-body-medium">MediSync</a>
+            </div>
+            <div class="m-0 col float-end">
+                <img width="300" height="50" src="{{ asset('images/funcasat.jpg')}}">
             </div>
         </div>
-        <div class="d-flex justify-content-end">
-            <img  width="300" height="50" src="{{ asset('images/funcasat.jpg')}}">
-        </div>
-
     </div>
+
 </nav>
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-5 navbar-transparent">
     <div class="container-fluid navbar-transparent">
