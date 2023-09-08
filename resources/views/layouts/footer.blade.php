@@ -1,8 +1,8 @@
 <div class="wrapper">
     <footer class="section footer-classic context-dark bg-image">
-        <div class="container">
-            <div class="row row-30">
-                <div class="col-md-4 col-xl-5">
+        <div class="container m-5">
+            <div class="row">
+                <div class="col-md-4 p-0">
                     <div class="pr-xl-4"><br class="brand" href="index.html">
                         <!-- Foto del logo de nosotros -->
                         <img width="48" height="48" src="{{ asset('images/logo.png')}}"><br>
