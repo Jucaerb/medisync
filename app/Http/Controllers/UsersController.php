@@ -36,4 +36,12 @@ class UsersController extends Controller
 
         return redirect()->action('UsersController@index')->with('status', 'Usuario borrada correctamente');
     }
+
+    protected function updateStatus($id){
+        $users = DB::table('users')->where('id', $id)->first();
+
+        return view('admin.status', [
+            'users' => $users
+        ]);
+    }
 }

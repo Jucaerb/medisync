@@ -67,4 +67,11 @@ class User extends Authenticatable
 //        ]);
 //    }
 
+    public static function updatedStatus($request){
+        return User::updated([
+//            "id" => $request->input('id'),
+            "status" => 'INACTIVE',
+        ]);
+    }
+
 }
