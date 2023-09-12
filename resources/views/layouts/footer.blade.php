@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper bg-black">
     <footer class="section footer-classic context-dark bg-image">
         <div class="container m-5">
             <div class="row row-30">
@@ -7,7 +7,7 @@
                         <!-- Foto del logo de nosotros -->
                         <img width="48" height="48" src="{{ asset('images/logo.png')}}"><br>
                         <p class="text-body-medium">MediSync</p>
-                        <p class="only-text-regular">Aplicacion web de monitoreo de pacientes y administración de medicamentos</p>
+                        <p class="only-text-regular">Aplicación web de monitoreo de pacientes y administración de medicamentos</p>
                         <!-- Rights-->
                         <p class="rights only-text-regular"><span>©  </span><span class="copyright-year"> 2023, </span><span> </span><span>CapiCode</span><span>. </span><span>All Rights Reserved</span></p>
                     </div>
@@ -37,6 +37,7 @@
                         <li class="only-text-regular">Información de contácto</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </footer>
