@@ -1,4 +1,4 @@
-<div class="wrapper bg-black">
+<div class="wrapper">
     <footer class="section footer-classic context-dark bg-image">
         <div class="container m-5">
             <div class="row row-30">
