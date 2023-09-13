@@ -48,6 +48,6 @@ class UsersController extends Controller
     protected function updatedUser(request $request){
        User::updatedUsers($request);
 
-        return redirect(route('admin.edituser'))->with('status', 'Usuario actualizado correctamente');
+        return view('admin.edituser');
     }
 }
