@@ -74,4 +74,15 @@ class User extends Authenticatable
         ]);
     }
 
+    public static function updatedUsers($request){
+        return User::updated([
+            "username" => $request->input('username'),
+            "password" => $request->input('password'),
+            "full_name" => $request->input('full_name'),
+            "email" => $request->input('email'),
+            "identification_number" => $request->input('identification_number'),
+            "role" => $request->input('role'),
+        ]);
+    }
+
 }

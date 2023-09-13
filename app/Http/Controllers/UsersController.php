@@ -44,4 +44,12 @@ class UsersController extends Controller
             'users' => $users
         ]);
     }
+
+    protected function updateUser($id){
+        $users = DB::table('users')->where('id', $id)->first();
+
+        return view('admin.edit', [
+            'users' => $users
+        ]);
+    }
 }
