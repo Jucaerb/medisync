@@ -46,7 +46,7 @@ class UsersController extends Controller
     }
 
     protected function updateUser(request $request){
-       User::updateUser($request);
+       User::updatedUsers($request);
 
         return redirect(route('admin.edituser'))->with('status', 'Usuario creado correctamente');
     }
