@@ -9,7 +9,7 @@
                         <h5 class="card-title text-body-title">Bienvenido!</h5>
                         <p class="card-text text-body-medium2">Revisa el estado principal y tareas pendientes de tus pacientes.</p>
                         <div class="d-flex justify-content-center">
-                            <a href="{{route('admin.registeruser')}}" class="button-body " >
+                            <a href="#" class="button-body a" >
                                 Aqui!
                             </a>
                         </div>
