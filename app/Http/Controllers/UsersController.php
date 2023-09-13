@@ -45,11 +45,9 @@ class UsersController extends Controller
         ]);
     }
 
-    protected function updateUser($id){
-        $users = DB::table('users')->where('id', $id)->first();
+    protected function updateUser(request $request){
+       User::updateUser($request);
 
-        return view('admin.edit', [
-            'users' => $users
-        ]);
+        return redirect(route('admin.edituser'))->with('status', 'Usuario creado correctamente');
     }
 }
