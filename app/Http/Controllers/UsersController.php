@@ -37,17 +37,34 @@ class UsersController extends Controller
         return redirect()->action('UsersController@index')->with('status', 'Usuario borrada correctamente');
     }
 
-    protected function updateStatus($id){
+    protected function updatedStatus(request $request,$id){
         $users = DB::table('users')->where('id', $id)->first();
 
-        return view('admin.status', [
+        return view('admin.users', [
             'users' => $users
         ]);
     }
 
     protected function updatedUser(request $request){
-       User::updatedUsers($request);
+       $user = User::find($request->id);
 
-        return view('admin.edituser');
+       return view('admin.edituser', [
+           'user' => $user
+       ]);
+    }
+
+    protected function saveEdit(request $request){
+
+        if ($request->password == null){
+            User::updatedUsers($request);
+        } else {
+            User::updatedUsersP($request);
+        }
+
+        $users = DB::table('users')->get();
+
+        return view('admin.users',[
+            'users' => $users
+        ]);
     }
 }
