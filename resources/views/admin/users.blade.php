@@ -37,7 +37,7 @@
                                         </span>
                                         </td>
                                     <td>
-                                        <a href="{{route('admin.edituser')}}">
+                                        <a href="{{route('admin.edituser', ['id' => $users->id])}}">
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
 
