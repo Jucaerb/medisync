@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -51,7 +53,7 @@ class User extends Authenticatable
     public static function createUser($request){
         return User::Create([
             "username" => $request->input('username'),
-            "password" => $request->input('password'),
+            "password" => Hash::make($request->input('password')),
             "full_name" => $request->input('full_name'),
             "email" => $request->input('email'),
             "type_identification" => 'CC',
@@ -75,14 +77,28 @@ class User extends Authenticatable
     }
 
     public static function updatedUsers($request){
-        return User::updated([
-            "username" => $request->input('username'),
-            "password" => $request->input('password'),
-            "full_name" => $request->input('full_name'),
-            "email" => $request->input('email'),
-            "identification_number" => $request->input('identification_number'),
-            "role" => $request->input('role'),
-        ]);
+        return User::updateOrCreate(['id' => $request->id],
+            [
+                'username' => $request->username,
+                'full_name' => $request->full_name,
+                'email' => $request->email,
+                'identification_number' => $request->identification_number,
+                'role' => $request->role,
+            ]
+        );
+    }
+
+    public static function updatedUsersP($request){
+        return User::updateOrCreate(['id' => $request->id],
+            [
+                'username' => $request->username,
+                'full_name' => $request->full_name,
+                'password' => Hash::make($request->password),
+                'email' => $request->email,
+                'identification_number' => $request->identification_number,
+                'role' => $request->role,
+            ]
+        );
     }
 
 }
