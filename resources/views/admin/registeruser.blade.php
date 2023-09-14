@@ -49,8 +49,11 @@
                     <input type="password" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
-                <button type="submit" class="btn btn-primary">Crear</button>
-                <a href="{{route('admin.home')}}" class="btn btn-primary">Cancelar</a>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                    <a href="{{route('admin.home')}}" class="btn btn-primary ml-5">Cancelar</a>
+                </div>
+
             </form>
             </p>
 

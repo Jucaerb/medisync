@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.inactiveModal')
     <div class="d-flex  p-4">
         <div class="container">
             <h5 class="card-title text-aling-left text-body-title pb-3 ">Mira tus empleados activos!</h5>
@@ -30,25 +31,21 @@
                                     <td>{{$users->role}}</td>
                                     <td>{{$users->email}}</td>
                                     <td>{{$users->identification_number}}</td>
-                                    <td style="width: 116px;">
-                                        <label class="toggle">
-                                            <input type="checkbox">
-                                            <span class="slider"> </span>
-{{--                                            <span class="labels text-body-button"--}}
-{{--                                                  data-on="Activo" data-off="Inactivo"></span>--}}
-
-                                        </label>
-                                    </td>
+                                    <td>
+                                        <span class="badge rounded-pill bg-success">
+                                            {{$users->status}}
+                                        </span>
+                                        </td>
                                     <td>
                                         <a href="{{route('admin.edituser')}}">
-                                            <i class="bi bi-input-cursor" style="font-size: 1.4rem;"></i>
+                                            <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
 
                                     </td>
                                     <td>
-                                        <a>
-                                            <i class="bi bi-trash" style="font-size: 1.4rem;"></i>
-                                        </a>
+                                        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="border: none; background: none;">
+                                            <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
+                                        </button>
                                     </td>
 
                                 </tr>

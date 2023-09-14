@@ -113,6 +113,21 @@ footer{
     cursor: pointer;
     outline: none;
 }
+.button-modal {
+    width: 100px;
+    height: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
 
 .button-login:hover {
     background-color: #4d6de6;
@@ -258,89 +273,6 @@ footer{
     text-align: center;
 }
 
-.toggle {
-    --width: 100px;
-    --height: calc(var(--width) / 3);
-
-    position: relative;
-    display: inline-block;
-    width: var(--width);
-    height: var(--height);
-    border-radius: var(--height);
-    cursor: pointer;
-}
-
-.toggle input {
-    display: none;
-}
-
-.toggle .slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--height);
-    border: 2px solid #aaa;
-    transition: all 0.4s ease-in-out;
-}
-
-.toggle .slider::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 3px;
-    width: calc(var(--height) * 0.6);
-    height: calc(var(--height) * 0.6);
-    border-radius: calc(var(--height) / 2);
-    background-color: #364254;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease-in-out;
-}
-
-.toggle input:checked + .slider {
-    border: 2px solid #037847;
-}
-
-.toggle input:checked + .slider::before {
-    background-color: #037847;
-}
-
-.toggle .labels {
-    position: absolute;
-    top: 8px;
-    left: 50px;
-    width: 100%;
-    height: 100%;
-    color: #364254;
-    font-size: 12px;
-    font-family: sans-serif;
-    transition: all 0.4s ease-in-out;
-}
-
-.toggle .labels::after {
-    content: attr(data-off);
-    position: absolute;
-    opacity: 1;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-    transition: all 0.4s ease-in-out;
-}
-
-.toggle .labels::before {
-    content: attr(data-on);
-    position: absolute;
-    opacity: 0;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
-    transition: all 0.4s ease-in-out;
-}
-
-.toggle input:checked ~ .labels::after {
-    opacity: 0;
-}
-
-.toggle input:checked ~ .labels::before {
-    opacity: 1;
-}
 
 .a {
     text-decoration: none;
