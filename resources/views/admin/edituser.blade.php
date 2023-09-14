@@ -58,8 +58,6 @@
                     <a href="{{route('admin.users')}}" class="btn btn-primary ml-5">Cancelar</a>
                 </div>
             </form>
-            </p>
-
         </div>
     </div>
 @endsection
