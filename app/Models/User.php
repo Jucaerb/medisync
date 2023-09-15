@@ -70,8 +70,7 @@ class User extends Authenticatable
 //    }
 
     public static function updatedStatus($request){
-        return User::updated([
-//            "id" => $request->input('id'),
+        return User::updateOrCreate(['id' => $request->id],[
             "status" => 'INACTIVE',
         ]);
     }
@@ -82,6 +81,7 @@ class User extends Authenticatable
                 'username' => $request->username,
                 'full_name' => $request->full_name,
                 'email' => $request->email,
+                'type_identification' => 'CC',
                 'identification_number' => $request->identification_number,
                 'role' => $request->role,
             ]
@@ -95,6 +95,7 @@ class User extends Authenticatable
                 'full_name' => $request->full_name,
                 'password' => Hash::make($request->password),
                 'email' => $request->email,
+                'type_identification' => 'CC',
                 'identification_number' => $request->identification_number,
                 'role' => $request->role,
             ]
