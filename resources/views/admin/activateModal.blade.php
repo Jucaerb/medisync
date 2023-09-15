@@ -7,7 +7,7 @@
             <div class="modal-body text-center" >
 
                 <i class="bi bi-question-circle" style="font-size: 4rem; color: #4d6de6"></i>
-                <p class="text-body-medium">Inactivar usuario</p>
+                <p class="text-body-medium">Activar usuario</p>
                 <p class="only-text-regular">¿Está seguro de ejecutar esta operación?</p>
             </div>
             <div class="modal-footer" style="border-top: none;">

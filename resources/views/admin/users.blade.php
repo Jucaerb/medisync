@@ -2,6 +2,7 @@
 
 @section('content')
     @include('admin.inactiveModal')
+    @include('admin.activateModal')
     <div class="d-flex  p-4">
         <div class="container">
             <h5 class="card-title text-aling-left text-body-title pb-3 ">Mira tus empleados activos!</h5>
