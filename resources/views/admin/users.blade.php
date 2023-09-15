@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('admin.inactiveModal')
-    @include('admin.activateModal')
+
     <div class="d-flex  p-4">
         <div class="container">
             <h5 class="card-title text-aling-left text-body-title pb-3 ">Mira tus empleados activos!</h5>
@@ -20,45 +19,44 @@
                                 <th scope="col">Estado</th>
                                 <th scope="col" style="max-width: 120px;"></th>
                                 <th scope="col" style="max-width: 120px;"></th>
-
-
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $users)
+                            @foreach($users as $user)
+                                @include('admin.inactiveModal')
+                                @include('admin.activateModal')
                                 <tr>
-                                    <td>{{$users->username}}</td>
-                                    <td>{{$users->full_name}}</td>
-                                    <td>{{$users->role}}</td>
-                                    <td>{{$users->email}}</td>
-                                    <td>{{$users->identification_number}}</td>
+                                    <td>{{$user->username}}</td>
+                                    <td>{{$user->full_name}}</td>
+                                    <td>{{$user->role}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->identification_number}}</td>
                                     <td>
-                                        @if($users->status == 'ACTIVE')
+                                        @if($user->status == 'ACTIVE')
                                             <span class="badge rounded-pill bg-success">
-                                            {{$users->status}}
+                                            {{$user->status}}
                                         </span>
                                         @else
                                             <span class="badge rounded-pill bg-danger">
-                                            {{$users->status}}
+                                            {{$user->status}}
                                         </span>
                                         @endif
 
                                     </td>
                                     <td>
                                     <td>
-                                        <a href="{{route('admin.edituser', ['id' => $users->id])}}">
+                                        <a href="{{route('admin.edituser', ['id' => $user->id])}}">
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
-
                                     </td>
                                     <td>
-                                        @if ($users->status == 'ACTIVE')
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#inactiveModal"
+                                        @if ($user->status == 'ACTIVE')
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#inactiveModal{{$user->id}}"
                                                     style="border: none; background: none">
                                                 <i class="bi bi-toggle-on" style="font-size: 1.4rem;"></i>
                                             </button>
                                         @else
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#activateModal"
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#activateModal{{$user->id}}"
                                                     style="border: none; background: none">
                                                 <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
                                             </button>
@@ -70,9 +68,7 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
-
             </div>
             <a href="{{route('admin.home')}}" class="button-regresar a">Regresar</a>
         </div>

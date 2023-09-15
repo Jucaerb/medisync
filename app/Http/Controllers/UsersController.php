@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -34,13 +35,23 @@ class UsersController extends Controller
     protected function deleted($id){
         $user = DB::table('users')->where('id', $id)->delete();
 
-        return redirect()->action('UsersController@index')->with('status', 'Usuario borrada correctamente');
+        return redirect()->action('UsersController@index')->with('status', 'Usuario borrado correctamente');
     }
 
-    protected function updatedStatus(request $request,$id){
-        User::updatedStatus($request);
+    protected function inactivateUser(request $request){
+        User::inactivateUser(intval($request->id));
 
-        $users = DB::table('users')->where('id', $id)->first();
+        $users = DB::table('users')->get();
+
+        return view('admin.users', [
+            'users' => $users
+        ]);
+    }
+
+    protected function activateUser(request $request){
+        User::activateUser(intval($request->id));
+
+        $users = DB::table('users')->get();
 
         return view('admin.users', [
             'users' => $users
@@ -55,14 +66,19 @@ class UsersController extends Controller
        ]);
     }
 
-    protected function saveEdit(request $request){
-        //dd($request);
-
+    protected function saveEdit(Request $request){
+        $user = User::find($request->user_id);
+        $user->full_name = $request->full_name;
+        $user->username = $request->username;
+        $user->identification_number = $request->identification_number;
+        $user->email = $request->email;
+        $user->role = $request->role;
         if ($request->password == null){
-            User::updatedUsers($request);
+            //
         } else {
-            User::updatedUsersP($request);
+            $user->password = Hash::make($request->password);
         }
+        $user->save();
 
         $users = DB::table('users')->get();
 

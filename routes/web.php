@@ -26,8 +26,10 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
     Route::post('/admin/store-user', [App\Http\Controllers\UsersController::class, 'save'])->name('admin.storeuser');
     Route::get('/admin/users', [App\Http\Controllers\UsersController::class, 'user'])->name('admin.users');
     Route::get('/admin/edituser', [App\Http\Controllers\UsersController::class, 'updatedUser'])->name('admin.edituser');
-    Route::Post('/admin/save-edit', [App\Http\Controllers\UsersController::class, 'saveEdit'])->name('admin.saveedit');
-    Route::Post('/admin/updated-status', [App\Http\Controllers\UsersController::class, 'updatedStatus'])->name('admin.updatedStatus');
+    Route::post('/admin/save-edit', [App\Http\Controllers\UsersController::class, 'saveEdit'])->name('admin.saveedit');
+    Route::put('/admin/user-inactivate', [App\Http\Controllers\UsersController::class, 'inactivateUser'])->name('admin.inactivateUser');
+    Route::put('/admin/user-activate', [App\Http\Controllers\UsersController::class, 'activateUser'])->name('admin.activateUser');
+
 });
 
 Route::middleware(['authUser:DOCTOR'])->group(function () {

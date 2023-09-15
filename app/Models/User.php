@@ -69,37 +69,15 @@ class User extends Authenticatable
 //        ]);
 //    }
 
-    public static function updatedStatus($request){
-        return User::updateOrCreate(['id' => $request->id],[
+    public static function inactivateUser($request){
+        return User::updateOrCreate(['id' => $request],[
             "status" => 'INACTIVE',
         ]);
     }
-
-    public static function updatedUsers($request){
-        return User::updateOrCreate(['id' => $request->id],
-            [
-                'username' => $request->username,
-                'full_name' => $request->full_name,
-                'email' => $request->email,
-                'type_identification' => 'CC',
-                'identification_number' => $request->identification_number,
-                'role' => $request->role,
-            ]
-        );
-    }
-
-    public static function updatedUsersP($request){
-        return User::updateOrCreate(['id' => $request->id],
-            [
-                'username' => $request->username,
-                'full_name' => $request->full_name,
-                'password' => Hash::make($request->password),
-                'email' => $request->email,
-                'type_identification' => 'CC',
-                'identification_number' => $request->identification_number,
-                'role' => $request->role,
-            ]
-        );
+    public static function activateUser($request){
+        return User::updateOrCreate(['id' => $request],[
+            "status" => 'ACTIVE',
+        ]);
     }
 
 }

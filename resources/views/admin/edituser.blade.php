@@ -19,7 +19,7 @@
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            value="{{$user->username}}">
                 </div>
-                <input type="hidden" id="type_identification" name="type_identification" value="CC">
+                <input type="hidden" id="user_id" name="user_id" value="{{$user->id}}">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Identificación</span>
                     <input id="identification_number" name="identification_number" type="text" class="form-control"
