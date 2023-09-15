@@ -38,6 +38,8 @@ class UsersController extends Controller
     }
 
     protected function updatedStatus(request $request,$id){
+        User::updatedStatus($request);
+
         $users = DB::table('users')->where('id', $id)->first();
 
         return view('admin.users', [
@@ -54,6 +56,7 @@ class UsersController extends Controller
     }
 
     protected function saveEdit(request $request){
+        //dd($request);
 
         if ($request->password == null){
             User::updatedUsers($request);
