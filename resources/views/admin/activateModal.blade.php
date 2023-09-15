@@ -1,4 +1,4 @@
-<div class="modal fade" id="inactiveModal" tabindex="-1" aria-labelledby="inactiveModalLabel" aria-hidden="true">
+<div class="modal fade" id="activateModal" tabindex="-1" aria-labelledby="activateModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="border-bottom: none;" >
@@ -17,5 +17,7 @@
         </div>
     </div>
 </div>
+
+
 
 

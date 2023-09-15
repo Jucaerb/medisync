@@ -32,10 +32,18 @@
                                     <td>{{$users->email}}</td>
                                     <td>{{$users->identification_number}}</td>
                                     <td>
-                                        <span class="badge rounded-pill bg-success">
+                                        @if($users->status == 'ACTIVE')
+                                            <span class="badge rounded-pill bg-success">
                                             {{$users->status}}
                                         </span>
-                                        </td>
+                                        @else
+                                            <span class="badge rounded-pill bg-danger">
+                                            {{$users->status}}
+                                        </span>
+                                        @endif
+
+                                    </td>
+                                    <td>
                                     <td>
                                         <a href="{{route('admin.edituser', ['id' => $users->id])}}">
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
@@ -43,9 +51,17 @@
 
                                     </td>
                                     <td>
-                                        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="border: none; background: none;">
-                                            <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
-                                        </button>
+                                        @if ($users->status == 'ACTIVE')
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#inactiveModal"
+                                                    style="border: none; background: none">
+                                                <i class="bi bi-toggle-on" style="font-size: 1.4rem;"></i>
+                                            </button>
+                                        @else
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#activateModal"
+                                                    style="border: none; background: none">
+                                                <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
+                                            </button>
+                                        @endif
                                     </td>
 
                                 </tr>
