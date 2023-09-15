@@ -27,6 +27,7 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
     Route::get('/admin/users', [App\Http\Controllers\UsersController::class, 'user'])->name('admin.users');
     Route::get('/admin/edituser', [App\Http\Controllers\UsersController::class, 'updatedUser'])->name('admin.edituser');
     Route::Post('/admin/save-edit', [App\Http\Controllers\UsersController::class, 'saveEdit'])->name('admin.saveedit');
+    Route::Post('/admin/updated-status', [App\Http\Controllers\UsersController::class, 'updatedStatus'])->name('admin.updatedStatus');
 });
 
 Route::middleware(['authUser:DOCTOR'])->group(function () {
