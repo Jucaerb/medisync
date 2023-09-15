@@ -19,6 +19,7 @@
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            value="{{$user->username}}">
                 </div>
+                <input type="hidden" id="type_identification" name="type_identification" value="CC">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Identificación</span>
                     <input id="identification_number" name="identification_number" type="text" class="form-control"
@@ -53,9 +54,13 @@
                     <input type="password" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a href="{{route('admin.users')}}" class="btn btn-primary ml-5">Cancelar</a>
+                <div class="d-flex justify-content-start">
+                    <div class="pr-5">
+                        <button type="submit" class="button-usuario" style="margin-right: 5px;">Guardar</button>
+                    </div>
+                    <div>
+                        <a href="{{route('admin.users')}}" class="button-regresar a">Cancelar</a>
+                    </div>
                 </div>
             </form>
         </div>
