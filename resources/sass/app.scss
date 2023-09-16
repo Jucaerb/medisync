@@ -67,7 +67,10 @@ a {
     color: #050505;
 }
 
-
+.texto-limitada{
+    max-width: 26rem;
+    max-height: 12.5rem;
+}
 
 ul, ol {
     list-style: none;
@@ -96,6 +99,7 @@ ul, ol {
 }
 footer{
     margin-top: 20px;
+
 }
 
 .button-login {
@@ -277,7 +281,14 @@ footer{
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
 }
+
+
 .bg-azul-claro{
     background: #EDF2FE !important;
 }
@@ -325,5 +336,14 @@ footer{
 
 a .bi-input-cursor {
     color: #344054;
+}
+.custom-badge-active {
+    background-color: #ECFDF3;
+    color: #037847;
+}
+.custom-badge-inactive{
+    background-color:#F2F4F7;
+    color: #333742;
+
 }
 
