@@ -18,5 +18,12 @@ return [
     'throttled' => 'Espera un momento antes de intentar de nuevo.',
     'token' => 'El token para reiniciar la contraseña es inválido.',
     'user' => "No encontramos un usuario con este correo.",
+    'ADMIN' => "Administrador",
+    'BOSS_NURSE' => "Jefe de enfermeria",
+    'NURSE' => "Enfermero",
+    'CARER' => "Cuidador",
+    'INVENTORY' => "Inventario",
+    'DOCTOR' => "Doctor",
+
 
 ];

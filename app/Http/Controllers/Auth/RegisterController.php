@@ -22,7 +22,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+//    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -38,6 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->redirect();
         $this->middleware('guest');
     }
 
@@ -76,5 +77,15 @@ class RegisterController extends Controller
             'identification_number' => $data['identification_number'],
             'status' => 'ACTIVE',
         ]);
+    }
+
+    private function redirect()
+    {
+        return back();
+    }
+
+    public function showRegistrationForm()
+    {
+        return redirect('/home');
     }
 }

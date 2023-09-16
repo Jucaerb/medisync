@@ -33,7 +33,7 @@
                                 <tr>
                                     <td class="text-body-table"> <strong>{{$user->username}}</strong></td>
                                     <td class="text-body-table">{{$user->full_name}}</td>
-                                    <td class="text-body-table">{{$user->role}}</td>
+                                    <td class="text-body-table">{{__('passwords.'.$user->role)}}</td>
                                     <td class="text-body-table">{{$user->email}}</td>
                                     <td class="text-body-table">{{$user->identification_number}}</td>
                                     <td>
