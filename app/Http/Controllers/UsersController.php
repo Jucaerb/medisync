@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Notifications\CreatedUser;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Lang;
 
 class UsersController extends Controller
 {
@@ -27,9 +30,16 @@ class UsersController extends Controller
     }
 
     protected function save(Request $request){
-        User::createUser($request);
+        try {
+            User::createUser($request);
+        }catch (\Exception $exception){
+            return redirect(route('admin.registeruser'))->with('error', 'Ocurrió un error al crear el usuario');
+        }
+        $user = User::where('email', $request->input('email'))->first();
 
-        return redirect(route('admin.registeruser'))->with('status', 'Usuario creado correctamente');
+        $user->notify(new CreatedUser($user));
+
+        return redirect(route('admin.registeruser'))->with('success', 'Usuario creado correctamente');
     }
 
     protected function deleted($id){
@@ -86,4 +96,5 @@ class UsersController extends Controller
             'users' => $users
         ]);
     }
+
 }

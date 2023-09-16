@@ -19,7 +19,7 @@
                         </div>
                         <div class="mb-3 mt-2">
                             <div>
-                                <label for="email" class="text-body-medium size-login">Usuario:</label>
+                                <label for="email" class="text-body-medium size-login">Correo:</label>
                             </div>
                             <div class="">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror input-login" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

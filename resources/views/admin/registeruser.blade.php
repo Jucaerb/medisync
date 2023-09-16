@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="d-flex justify-content-center align-items-center p-5">
         <div class="card mb-3 border-0 " style="">
             <a class="card-title text-body-title">Registra un nuevo empleado!</a>
