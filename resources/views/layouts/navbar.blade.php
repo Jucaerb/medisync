@@ -15,7 +15,7 @@
 </nav>
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-5 navbar-transparent">
     <div class="container-fluid navbar-transparent p-0">
-        <a class="navbar-brand" href="/home"><img width="48" height="48" src="{{ asset('images/logo.png')}}"></a>
+        <a class="navbar-brand" href="{{route('home')}}"><img width="48" height="48" src="{{ asset('images/logo.png')}}"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
