@@ -16,14 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('temporality');
             $table->string('schedule');
-            $table->string('temporality');
             $table->string('request');
             $table->string('status');
             $table->string('patient_identification');
             $table->integer('user_id');
             $table->integer('medicine_id');
             $table->string('dose');
-            $table->string('via');
             $table->string('via');
             $table->string('observations');
             $table->timestamps();
