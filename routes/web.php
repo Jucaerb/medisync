@@ -34,6 +34,13 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
 
 Route::middleware(['authUser:DOCTOR'])->group(function () {
     Route::get('/doctor/home', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.home');
+    Route::get('/doctor/register', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.registerpatient');
+    Route::post('/doctor/store-user', [App\Http\Controllers\DoctorController::class, 'save'])->name('doctor.storepatient');
+    Route::get('/doctor/patient' , [App\Http\Controllers\DoctorController::class, 'patient'])->name('doctor.patient');
+    Route::delete('/doctor/deleted', [App\Http\Controllers\DoctorController::class, 'deleted'])->name('doctor.deleted');
+    Route::get('/doctor/editpatient', [App\Http\Controllers\DoctorController::class, 'updatedPatient'])->name('doctor.editpatient');
+    Route::post('/doctor/save-edit', [App\Http\Controllers\DoctorController::class, 'saveEdit'])->name('doctor.saveedit');
+
 });
 
 Route::middleware(['authUser:BOSS_NURSE'])->group( function () {
