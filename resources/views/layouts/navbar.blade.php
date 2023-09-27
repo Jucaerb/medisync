@@ -31,7 +31,7 @@
                                     Registro de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Nuevo paciente</a></li>
+                                    <li><a class="dropdown-item" href="{{route('doctor.registerpatient')}}">Nuevo paciente</a></li>
                                     <li><a class="dropdown-item" href="#">Visualización de pacientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
