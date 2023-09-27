@@ -38,8 +38,4 @@ class Patient extends Authenticatable
         ]);
     }
 
-    public static function updatedPatient($request){
-
-    }
-
 }
