@@ -24,6 +24,8 @@ return [
     'CARER' => "Cuidador",
     'INVENTORY' => "Inventario",
     'DOCTOR' => "Doctor",
+    'MEN' => "Hombre",
+    'FEMALE' => "Mujer",
 
 
 ];
