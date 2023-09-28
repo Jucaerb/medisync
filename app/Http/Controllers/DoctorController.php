@@ -51,6 +51,26 @@ class DoctorController extends Controller
         return redirect(route('doctor.registerpatient'))->with('success', 'Paciente creado correctamente');
     }
 
+    protected function inactivePatient(Request $request){
+        Patient::inactivePatient(intval($request->id));
+
+        $patient = DB::table('patients')->get();
+
+        return view('doctor.patient', [
+           'patient' => $patient
+        ]);
+    }
+
+    protected function activePatient(Request $request){
+        Patient::activePatient(intval($request->id));
+
+        $patient = DB::table('patients')->get();
+
+        return view('doctor.patient', [
+           'patient' => $patient
+        ]);
+    }
+
     protected function updatedPatient(request $request){
         $patient = Patient::find($request->id);
 

@@ -23,7 +23,8 @@ class Patient extends Authenticatable
         'sex',
         'birth_date',
         'in_date',
-        'room'
+        'room',
+        'status'
     ];
 
     public static function createPatient($request){
@@ -35,6 +36,18 @@ class Patient extends Authenticatable
             "birth_date" => $request->input('birth_date'),
             "in_date" => $request->input('in_date'),
             "room" => $request->input('room'),
+            "status" => 'ACTIVE',
+        ]);
+    }
+
+    public static function inactivePatient($request){
+        return Patient::updateOrCreate(['id' => $request], [
+           "status" => 'INACTIVE',
+        ]);
+    }
+
+    public static function activePatient($request){
+        return Patient::updateOrCreate(['id' => $request], [
             "status" => 'ACTIVE',
         ]);
     }
