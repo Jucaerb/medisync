@@ -39,6 +39,8 @@ Route::middleware(['authUser:DOCTOR'])->group(function () {
     Route::get('/doctor/patient' , [App\Http\Controllers\DoctorController::class, 'patient'])->name('doctor.patient');
     Route::get('/doctor/editpatient', [App\Http\Controllers\DoctorController::class, 'updatedPatient'])->name('doctor.editpatient');
     Route::post('/doctor/save-edit', [App\Http\Controllers\DoctorController::class, 'saveEdit'])->name('doctor.saveedit');
+    Route::put('/doctor/patient-inactive', [App\Http\Controllers\DoctorController::class, 'inactivePatient'])->name('doctor.inactivePatient');
+    Route::put('/doctor/patient-activate', [App\Http\Controllers\DoctorController::class, 'activePatient'])->name('doctor.activePatient');
 
 });
 
