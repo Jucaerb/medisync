@@ -35,6 +35,7 @@ class Patient extends Authenticatable
             "birth_date" => $request->input('birth_date'),
             "in_date" => $request->input('in_date'),
             "room" => $request->input('room'),
+            "status" => 'ACTIVE',
         ]);
     }
 
