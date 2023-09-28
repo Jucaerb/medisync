@@ -42,12 +42,6 @@ class UsersController extends Controller
         return redirect(route('admin.registeruser'))->with('success', 'Usuario creado correctamente');
     }
 
-    protected function deleted($id){
-        $user = DB::table('users')->where('id', $id)->delete();
-
-        return redirect()->action('UsersController@index')->with('status', 'Usuario borrado correctamente');
-    }
-
     protected function inactivateUser(request $request){
         User::inactivateUser(intval($request->id));
 

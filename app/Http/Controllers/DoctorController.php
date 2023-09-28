@@ -51,14 +51,6 @@ class DoctorController extends Controller
         return redirect(route('doctor.registerpatient'))->with('success', 'Paciente creado correctamente');
     }
 
-    protected function deleted($id){
-        $patient = DB::table('patients')->where('id', $id)->delete();
-
-        return view('doctor.registerpatient', [
-           'patient' => $patient
-        ]);
-    }
-
     protected function updatedPatient(request $request){
         $patient = Patient::find($request->id);
 

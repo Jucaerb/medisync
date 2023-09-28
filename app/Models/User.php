@@ -63,12 +63,6 @@ class User extends Authenticatable
         ]);
     }
 
-//    public static function deletedUser($request) {
-//        return User::deletedUser([
-//
-//        ]);
-//    }
-
     public static function inactivateUser($request){
         return User::updateOrCreate(['id' => $request],[
             "status" => 'INACTIVE',

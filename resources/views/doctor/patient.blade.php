@@ -42,12 +42,6 @@
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
                                     </td>
-                                    <td>
-                                        <a href="{{route('doctor.deleted', [$patient->id])}}">
-                                            <i class="bi bi-trash" style="font-size: 1.4rem;"></i>
-                                        </a>
-                                    </td>
-
                                 </tr>
                             @endforeach
                             </tbody>
