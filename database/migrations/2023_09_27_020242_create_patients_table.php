@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('birth_date');
             $table->string('in_date');
             $table->string('room');
+            $table->string('status');
             $table->timestamps();
         });
     }
