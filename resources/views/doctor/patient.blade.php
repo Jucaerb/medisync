@@ -22,6 +22,7 @@
                                 <th scope="col" class="text-body">Fecha de nacimiento</th>
                                 <th scope="col" class="text-body">Identificación</th>
                                 <th scope="col" class="text-body">Habitación</th>
+                                <th scope="col" class="text-body">Estado</th>
                                 <th scope="col" class="text-body">Historia clinica</th>
                                 <th scope="col" style="max-width: 120px;"></th>
                                 <th scope="col" style="max-width: 120px;"></th>
@@ -37,12 +38,38 @@
                                     <td class="text-body-table">{{$patient->identification}}</td>
                                     <td class="text-body-table">{{$patient->room}}</td>
                                     <td>
+                                        @if($patient->status == 'ACTIVE')
+
+                                            <span class=" bi bi-dot badge rounded-pill custom-badge-active" style="font-size: 0.9rem;">
+                                            {{ucfirst(strtolower($patient->status))}}
+                                        </span>
+                                        @else
+                                            <span class=" bi bi-dot badge rounded-pill custom-badge-inactive" style="font-size: 0.9rem;">
+                                            {{ucfirst(strtolower($patient->status))}}
+                                        </span>
+                                        @endif
+
+                                    </td>
+                                    <td>
                                     <td>
                                         <a href="{{route('doctor.editpatient', ['id' => $patient->id])}}">
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
                                     </td>
                                 </tr>
+                                <td>
+                                    @if ($patient->status == 'ACTIVE')
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#inactiveModal{{$patient->id}}"
+                                                style="border: none; background: none">
+                                            <i class="bi bi-toggle-on" style="font-size: 1.4rem; "></i>
+                                        </button>
+                                    @else
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#activateModal{{$patient->id}}"
+                                                style="border: none; background: none">
+                                            <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
+                                        </button>
+                                    @endif
+                                </td>
                             @endforeach
                             </tbody>
                         </table>
