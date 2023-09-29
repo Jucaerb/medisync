@@ -30,8 +30,10 @@
                             </thead>
                             <tbody>
                             @foreach($patient as $patient)
+                                @include('doctor.inactiveModal')
+                                @include('doctor.activateModal')
                                 <tr>
-                                    <td class="text-body-table"> <strong>{{$patient->name}}</strong></td>
+                                    <td class="text-body-table"><strong>{{$patient->name}}</strong></td>
                                     <td class="text-body-table">{{$patient->in_date}}</td>
                                     <td class="text-body-table">{{__('passwords.'.$patient->sex)}}</td>
                                     <td class="text-body-table">{{$patient->birth_date}}</td>
@@ -40,36 +42,48 @@
                                     <td>
                                         @if($patient->status == 'ACTIVE')
 
-                                            <span class=" bi bi-dot badge rounded-pill custom-badge-active" style="font-size: 0.9rem;">
+                                            <span class=" bi bi-dot badge rounded-pill custom-badge-active"
+                                                  style="font-size: 0.9rem;">
                                             {{ucfirst(strtolower($patient->status))}}
                                         </span>
                                         @else
-                                            <span class=" bi bi-dot badge rounded-pill custom-badge-inactive" style="font-size: 0.9rem;">
+                                            <span class=" bi bi-dot badge rounded-pill custom-badge-inactive"
+                                                  style="font-size: 0.9rem;">
                                             {{ucfirst(strtolower($patient->status))}}
                                         </span>
                                         @endif
 
                                     </td>
                                     <td>
+
+                                    </td>
                                     <td>
+                                        <a>
+                                            <i class="bi bi-file-earmark-plus-fill" style="font-size: 1.4rem;"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+
                                         <a href="{{route('doctor.editpatient', ['id' => $patient->id])}}">
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
                                     </td>
+                                    <td>
+                                        @if ($patient->status == 'ACTIVE')
+                                            <button type="button" data-bs-toggle="modal"
+                                                    data-bs-target="#inactiveModal{{$patient->id}}"
+                                                    style="border: none; background: none">
+                                                <i class="bi bi-toggle-on" style="font-size: 1.4rem; "></i>
+                                            </button>
+                                        @else
+                                            <button type="button" data-bs-toggle="modal"
+                                                    data-bs-target="#activateModal{{$patient->id}}"
+                                                    style="border: none; background: none">
+                                                <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
+                                            </button>
+                                        @endif
+                                    </td>
                                 </tr>
-                                <td>
-                                    @if ($patient->status == 'ACTIVE')
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#inactiveModal{{$patient->id}}"
-                                                style="border: none; background: none">
-                                            <i class="bi bi-toggle-on" style="font-size: 1.4rem; "></i>
-                                        </button>
-                                    @else
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#activateModal{{$patient->id}}"
-                                                style="border: none; background: none">
-                                            <i class="bi bi-toggle-off" style="font-size: 1.4rem;"></i>
-                                        </button>
-                                    @endif
-                                </td>
                             @endforeach
                             </tbody>
                         </table>
