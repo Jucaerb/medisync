@@ -32,16 +32,19 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
 
 });
 
+Route::middleware(['authUser:DOCTOR,ADMIN,BOSS_NURSE,NURSE'])->group(function () {
+    Route::get('/register', [App\Http\Controllers\DoctorController::class, 'create'])->name('registerpatient');
+    Route::post('/store-user', [App\Http\Controllers\DoctorController::class, 'save'])->name('storepatient');
+    Route::get('/patient' , [App\Http\Controllers\DoctorController::class, 'patient'])->name('patient');
+    Route::get('/editpatient', [App\Http\Controllers\DoctorController::class, 'updatedPatient'])->name('editpatient');
+    Route::post('/save-edit', [App\Http\Controllers\DoctorController::class, 'saveEdit'])->name('saveedit');
+    Route::put('/patient-inactive', [App\Http\Controllers\DoctorController::class, 'inactivePatient'])->name('inactivePatient');
+    Route::put('/patient-activate', [App\Http\Controllers\DoctorController::class, 'activePatient'])->name('activePatient');
+
+});
+
 Route::middleware(['authUser:DOCTOR'])->group(function () {
     Route::get('/doctor/home', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.home');
-    Route::get('/doctor/register', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.registerpatient');
-    Route::post('/doctor/store-user', [App\Http\Controllers\DoctorController::class, 'save'])->name('doctor.storepatient');
-    Route::get('/doctor/patient' , [App\Http\Controllers\DoctorController::class, 'patient'])->name('doctor.patient');
-    Route::get('/doctor/editpatient', [App\Http\Controllers\DoctorController::class, 'updatedPatient'])->name('doctor.editpatient');
-    Route::post('/doctor/save-edit', [App\Http\Controllers\DoctorController::class, 'saveEdit'])->name('doctor.saveedit');
-    Route::put('/doctor/patient-inactive', [App\Http\Controllers\DoctorController::class, 'inactivePatient'])->name('doctor.inactivePatient');
-    Route::put('/doctor/patient-activate', [App\Http\Controllers\DoctorController::class, 'activePatient'])->name('doctor.activePatient');
-
 });
 
 Route::middleware(['authUser:BOSS_NURSE'])->group( function () {
