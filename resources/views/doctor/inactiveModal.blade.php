@@ -9,7 +9,7 @@
                 <p class="text-body-medium">Inactivar paciente</p>
                 <p class="only-text-regular">¿Está seguro de ejecutar esta operación?</p>
             </div>
-            <form action="{{route('doctor.inactivePatient', ['id' => $patient->id])}}" method="POST">
+            <form action="{{route('inactivePatient', ['id' => $patient->id])}}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="modal-footer" style="border-top: none;">

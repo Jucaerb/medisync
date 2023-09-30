@@ -38,17 +38,17 @@ class DoctorController extends Controller
     }
 
     protected function create(){
-        return view('doctor.registerPatient');
+        return view('doctor.registerpatient');
     }
 
     protected function save(Request $request){
         try {
             Patient::createPatient($request);
         }catch (\Exception $exception){
-            return redirect(route('doctor.registerpatient'))->with('error', 'Ocurrió un error al crear el paciente');
+            return redirect(route('registerpatient'))->with('error', 'Ocurrió un error al crear el paciente');
         }
 
-        return redirect(route('doctor.registerpatient'))->with('success', 'Paciente creado correctamente');
+        return redirect(route('registerpatient'))->with('success', 'Paciente creado correctamente');
     }
 
     protected function inactivePatient(Request $request){

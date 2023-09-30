@@ -8,7 +8,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="{{ route('doctor.registerpatient') }}" class="button-add a ">+ Añadir paciente</a>
+                        <a href="{{ route('registerpatient') }}" class="button-add a ">+ Añadir paciente</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -64,7 +64,7 @@
                                     </td>
                                     <td>
 
-                                        <a href="{{route('doctor.editpatient', ['id' => $patient->id])}}">
+                                        <a href="{{route('editpatient', ['id' => $patient->id])}}">
                                             <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
                                         </a>
                                     </td>

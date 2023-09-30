@@ -5,7 +5,7 @@
         <div class="card mb-3 border-0 " style="">
             <a class="card-title text-body-title">Editar información de un paciente:</a>
             <p class="card-text">
-            <form action="{{route('doctor.saveedit')}}" method="POST">
+            <form action="{{route('saveedit')}}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
@@ -50,7 +50,7 @@
                         <button type="submit" class="button-usuario" style="margin-right: 5px;">Guardar</button>
                     </div>
                     <div>
-                        <a href="{{route('doctor.patient')}}" class="button-regresar a">Cancelar</a>
+                        <a href="{{route('patient')}}" class="button-regresar a">Cancelar</a>
                     </div>
                 </div>
             </form>

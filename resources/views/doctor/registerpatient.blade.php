@@ -15,7 +15,7 @@
         <div class="card mb-3 border-0 " style="">
             <a class="card-title text-body-title">Registra un nuevo paciente:</a>
             <p class="card-text">
-            <form action="{{route('doctor.storepatient')}}" method="POST">
+            <form action="{{route('storepatient')}}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
