@@ -32,7 +32,7 @@ Route::middleware(['authUser:ADMIN'])->group( function () {
 
 });
 
-Route::middleware(['authUser:DOCTOR,ADMIN,BOSS_NURSE,NURSE'])->group(function () {
+Route::middleware(['authUser:DOCTOR,ADMIN'])->group(function () {
     Route::get('/register', [App\Http\Controllers\DoctorController::class, 'create'])->name('registerpatient');
     Route::post('/store-user', [App\Http\Controllers\DoctorController::class, 'save'])->name('storepatient');
     Route::get('/patient' , [App\Http\Controllers\DoctorController::class, 'patient'])->name('patient');
