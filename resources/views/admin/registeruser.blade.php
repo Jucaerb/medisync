@@ -21,24 +21,24 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
                     <input id="full_name" name="full_name" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           minlength="255" required>
+                           maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Usuario</span>
                     <input id="username" name="username" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           minlength="255" required>
+                           maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Identificación</span>
                     <input id="identification_number" name="identification_number" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           minlength="255" required>
+                           maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Correo electrónico</span>
                     <input id="email" name="email" type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" minlength="255" required>
+                           aria-describedby="inputGroup-sizing-default" maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Rol principal</span>
@@ -56,12 +56,12 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
                     <input id="password" name="password" type="password" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           minlength="255" required>
+                           maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Confirmar contraseña</span>
                     <input type="password" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" minlength="255" required>
+                           aria-describedby="inputGroup-sizing-default" maxlength="255" required>
                 </div>
                 <div class="d-flex justify-content-start">
                     <div class="pr-5">

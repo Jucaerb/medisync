@@ -10,14 +10,14 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
                     <input id="name" name="name" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" minlength="255"
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" maxlength="255"
                            value="{{$patient->name}}">
                 </div>
                 <input type="hidden" id="patient_id" name="patient_id" value="{{$patient->id}}">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cédula</span>
                     <input id="identification" name="identification" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" minlength="255"
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" maxlength="255"
                            value="{{$patient->identification}}">
                 </div>
                 <div class="input-group mb-3">
@@ -31,19 +31,19 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
                     <input id="birth_date" name="birth_date" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" minlength="255"
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" maxlength="255"
                            value="{{$patient->birth_date}}">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de ingreso</span>
                     <input id="in_date" name="in_date" type="text" class="form-control"
                            aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" minlength="255" value="{{$patient->in_date}}">
+                           aria-describedby="inputGroup-sizing-default" maxlength="255" value="{{$patient->in_date}}">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Habitación</span>
                     <input id="room" name="room" type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" minlength="255" value="{{$patient->room}}">
+                           aria-describedby="inputGroup-sizing-default" maxlength="255" value="{{$patient->room}}">
                 </div>
                 <div class="d-flex justify-content-start">
                     <div class="pr-5">
