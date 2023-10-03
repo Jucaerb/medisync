@@ -20,12 +20,14 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
                     <input id="name" name="name" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                           minlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cédula</span>
                     <input id="identification" name="identification" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                           minlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Sexo</span>
@@ -37,18 +39,20 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
-                    <input id="birth_date" name="birth_date"  type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <input id="birth_date" name="birth_date" type="text" class="form-control"
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                           minlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de ingreso</span>
-                    <input id="in_date" name="in_date" type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" required>
+                    <input id="in_date" name="in_date" type="text" class="form-control"
+                           aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default" minlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Habitación</span>
                     <input id="room" name="room" type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" required>
+                           aria-describedby="inputGroup-sizing-default" minlength="255" required>
                 </div>
                 <div class="d-flex justify-content-start">
                     <div class="pr-5">
