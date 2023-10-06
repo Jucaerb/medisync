@@ -18,7 +18,7 @@ class UsersController extends Controller
     }
 
     protected function user() {
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->paginate(5);
 
         return view('admin.users',[
             'users' => $users
