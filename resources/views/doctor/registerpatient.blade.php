@@ -17,18 +17,21 @@
             <p class="card-text">
             <form action="{{route('storepatient')}}" method="POST">
                 @csrf
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre completo</span>
                     <input id="name" name="name" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            maxlength="255" required>
                 </div>
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cédula</span>
                     <input id="identification" name="identification" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            maxlength="255" required>
                 </div>
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Sexo</span>
                     <select id="sex" name="sex" class="form-select" aria-label="Default select example">
@@ -37,17 +40,20 @@
                         <option value="FEMALE">Mujer</option>
                     </select>
                 </div>
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
-                    <input id="birth_date" name="birth_date" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           maxlength="255" required>
+                    <input id="birth_date" name="birth_date" type="date" class="form-control"
+                           max="{{ date('Y-m-d') }}" required>
+                    <i class="fas fa-calendar input-prefix"></i>
                 </div>
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de ingreso</span>
-                    <input id="in_date" name="in_date" type="text" class="form-control"
-                           aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" maxlength="255" required>
+                    <input id="in_date" name="in_date" type="date" class="form-control"
+                           max="{{ date('Y-m-d') }}" required>
+                    <i class="fas fa-calendar input-prefix"></i>
+
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Habitación</span>
