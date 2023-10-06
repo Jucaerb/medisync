@@ -15,6 +15,7 @@
         <div class="card mb-3 border-0 " style="">
             <a class="card-title text-body-title">Registra un nuevo empleado!</a>
             <p class="card-text">
+            @include('admin.cancelModal')
             <form action="{{route('admin.storeuser')}}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
@@ -68,7 +69,7 @@
                         <button type="submit" class="button-usuario" style="margin-right: 5px;">Crear</button>
                     </div>
                     <div>
-                        <a href="{{ route('admin.home') }}" class="button-regresar a">Cancelar</a>
+                        <button type="button" data-bs-toggle="modal" class="button-regresar"  data- data-bs-target="#cancelModal">Cancelar</button>
                     </div>
                 </div>
             </form>
