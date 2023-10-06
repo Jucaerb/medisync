@@ -73,11 +73,15 @@
                             @endforeach
                             </tbody>
                         </table>
+
                     </div>
+
                 </div>
+                {{$users->links()}}
             </div>
             <a href="{{route('admin.home')}}" class="button-regresar a">Regresar</a>
         </div>
     </div>
+
 
 @endsection
