@@ -30,6 +30,13 @@ class UsersController extends Controller
     }
 
     protected function save(Request $request){
+        $confirmPass = false;
+        if ($request->input('password') === $request->input('confirm-password')){
+            $confirmPass = true;
+        }
+        if (!$confirmPass){
+            return redirect(route('admin.registeruser'))->with('error', 'Las contraseñas no coinciden');
+        }
         try {
             User::createUser($request);
         }catch (\Exception $exception){
