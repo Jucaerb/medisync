@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activities;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -95,5 +96,27 @@ class DoctorController extends Controller
         return view('doctor.patient', [
             'patient' => $patients
         ]);
+    }
+
+    protected function createActivity() {
+        return view('doctor.activities');
+    }
+
+    Protected function Activities() {
+        $activities = DB::table('activities')->get(); //CAMBIAR CUANDO FUNCIONE PAGINACION
+
+        return view('doctor.activities', [
+            'activities' => $activities
+        ]);
+    }
+
+    protected function saveActivity(Request $request) {
+        try {
+            Activities::createActivity($request);
+        }catch (\Exception $exception){
+            return redirect(route('activities'))->with('error', 'Ocurrió un error al crear el paciente');
+        }
+
+        return redirect(route('activities'))->with('success', 'Paciente creado correctamente');
     }
 }
