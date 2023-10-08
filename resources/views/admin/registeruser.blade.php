@@ -44,7 +44,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Rol principal</span>
                     <select id="role" name="role" class="form-select" aria-label="Default select example">
-                        <option selected>Selecciona una opción</option>
+                        <option disabled selected value>Selecciona una opción</option>
                         <option value="DOCTOR">Doctor</option>
                         <option value="BOSS_NURSE">Jefe de enfermeria</option>
                         <option value="NURSE">Enfermero</option>
