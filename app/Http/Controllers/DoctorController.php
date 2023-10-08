@@ -99,7 +99,7 @@ class DoctorController extends Controller
     }
 
     protected function createActivity() {
-        return view('doctor.activities');
+        return view('doctor.createactivity');
     }
 
     Protected function Activities() {
@@ -114,9 +114,40 @@ class DoctorController extends Controller
         try {
             Activities::createActivity($request);
         }catch (\Exception $exception){
-            return redirect(route('activities'))->with('error', 'Ocurrió un error al crear el paciente');
+            return redirect(route('activities'))->with('error', 'Ocurrió un error al crear la actividad');
         }
 
-        return redirect(route('activities'))->with('success', 'Paciente creado correctamente');
+        return redirect(route('activities'))->with('success', 'Actividad creado correctamente');
+    }
+
+    protected function updateActivity(Request $request){
+        $activities = Activities::find($request->id);
+
+        return view('doctor.editactivity', [
+            'activity' => $activities
+        ]);
+    }
+
+    protected function saveEditActivity(Request $request){
+        $activities = Activities::find($request->activities_id);
+        $activities->patient = $request->patient;
+        $activities->name_activity = $request->name_activity;
+        $activities->min_permission = $request->min_permission;
+        $activities->temporality = $request->temporality;
+        $activities->schedule = $request->schedule;
+        $activities->medicine_id = $request->medicine_id;
+        $activities->dose = $request->dose;
+        $activities->via = $request->via;
+        $activities->create_date = $request->create_date;
+        $activities->suspension_date = $request->suspension_date;
+        $activities->observations = $request->observation;
+
+        $activities->save();
+
+        $activities = DB::table('activities')->get();
+
+        return view('doctor.activities', [
+            'activity' => $activities
+        ]);
     }
 }
