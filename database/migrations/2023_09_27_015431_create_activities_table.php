@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('patient');
+            $table->string('name_activity');
+            $table->string('min_permissions');
             $table->string('temporality');
             $table->string('schedule');
-            $table->string('request');
-            $table->string('status');
-            $table->string('patient_identification');
-            $table->integer('user_id');
-            $table->integer('medicine_id');
-            $table->string('dose');
-            $table->string('via');
+            $table->string('medicine_id');
+            $table->integer('dose');
+            $table->integer('via');
+            $table->string('create_date');
+            $table->string('suspension_date');
             $table->string('observations');
             $table->timestamps();
         });
