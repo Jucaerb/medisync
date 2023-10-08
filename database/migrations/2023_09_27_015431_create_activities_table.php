@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('temporality');
             $table->string('schedule');
             $table->string('medicine_id');
-            $table->integer('dose');
-            $table->integer('via');
+            $table->string('dose');
+            $table->string('via');
             $table->string('create_date');
             $table->string('suspension_date');
             $table->string('observations');
