@@ -99,13 +99,15 @@ class DoctorController extends Controller
     }
 
     protected function createActivity() {
-        return view('doctor.createactivity');
+        $patient = Patient::all();
+
+        return view('doctor.createactivity', compact('patient'));
     }
 
     Protected function Activities() {
         $activities = DB::table('activities')->get(); //CAMBIAR CUANDO FUNCIONE PAGINACION
 
-        return view('doctor.activities', [
+        return view('doctor.createactivity', [
             'activities' => $activities
         ]);
     }
