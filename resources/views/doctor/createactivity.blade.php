@@ -23,7 +23,7 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
                     <select id="patient" name="patient" class="form-select" aria-label="Default select example" required>
                         <option disabled selected value>Selecciona un paciente</option>
-                        @foreach($patient as $patient)
+                        @foreach($patients as $patient)
                             <option value="{{$patient->name}}">{{$patient->name}}</option>
                         @endforeach
                     </select>
