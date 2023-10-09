@@ -91,7 +91,7 @@
                 </div>
                 {{$patients->links('vendor.pagination.simple-bootstrap-5')}}
             </div>
-            <a href="{{route('doctor.home')}}" class="button-regresar a">Regresar</a>
+            <a href="{{route('home')}}" class="button-regresar a">Regresar</a>
         </div>
     </div>
 
