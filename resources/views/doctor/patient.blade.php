@@ -29,7 +29,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($patient as $patient)
+                            @foreach($patients as $patient)
                                 @include('doctor.inactiveModal')
                                 @include('doctor.activateModal')
                                 <tr>
@@ -89,6 +89,7 @@
                         </table>
                     </div>
                 </div>
+                {{$patients->links('vendor.pagination.simple-bootstrap-5')}}
             </div>
             <a href="{{route('doctor.home')}}" class="button-regresar a">Regresar</a>
         </div>
