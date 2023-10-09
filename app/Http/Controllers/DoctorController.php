@@ -9,32 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class DoctorController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-    public function __construct()
-    {
-        //  $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
 
     protected function index() {
         return view('doctor.home');
     }
 
     protected function patient() {
-        $patient = DB::table('patients')->get();
+        $patients = DB::table('patients')->paginate(6);
 
         return view('doctor.patient', [
-            'patient' => $patient
+            'patients' => $patients
         ]);
     }
 
@@ -73,10 +57,10 @@ class DoctorController extends Controller
     }
 
     protected function updatedPatient(request $request){
-        $patient = Patient::find($request->id);
+        $patients = Patient::find($request->id);
 
         return view('doctor.editpatient', [
-            'patient' => $patient
+            'patients' => $patients
         ]);
     }
 
@@ -99,9 +83,9 @@ class DoctorController extends Controller
     }
 
     protected function createActivity() {
-        $patient = Patient::all();
+        $patients = Patient::all();
 
-        return view('doctor.createactivity', compact('patient'));
+        return view('doctor.createactivity', compact('patients'));
     }
 
     Protected function Activities() {
