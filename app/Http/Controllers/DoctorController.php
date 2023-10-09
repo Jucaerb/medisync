@@ -140,7 +140,7 @@ class DoctorController extends Controller
         $activities->via = $request->via;
         $activities->create_date = $request->create_date;
         $activities->suspension_date = $request->suspension_date;
-        $activities->observations = $request->observation;
+        $activities->observations = $request->observations;
 
         $activities->save();
 
