@@ -68,20 +68,16 @@
                                             </button>
                                         @endif
                                     </td>
-
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-
                     </div>
-
                 </div>
-                {{$users->links()}}
+                {{$users->links('vendor.pagination.simple-bootstrap-5')}}
             </div>
             <a href="{{route('admin.home')}}" class="button-regresar a">Regresar</a>
         </div>
     </div>
-
 
 @endsection
