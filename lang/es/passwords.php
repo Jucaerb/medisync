@@ -26,6 +26,16 @@ return [
     'DOCTOR' => "Doctor",
     'MEN' => "Hombre",
     'FEMALE' => "Mujer",
-
+    'diary' => "Diario",
+    'every 4 hours' => "Cada 4 horas",
+    'every 8 hours' => "Cada 8 horas",
+    'every 12 hours' => "Cada 12 horas",
+    'weekly' => "Semanal",
+    'monthly' => "mensual",
+    'every 2 days' => "Cada 2 días",
+    'every 3 days' => "Cada 3 días",
+    'every 4 days' => "Cada 4 días",
+    'every 5 days' => "Cada 5 días",
+    'every 6 days' => "Cada 6  días",
 
 ];
