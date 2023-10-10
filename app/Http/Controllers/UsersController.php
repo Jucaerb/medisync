@@ -17,12 +17,18 @@ class UsersController extends Controller
         return view('admin.home');
     }
 
-    protected function user() {
-        $users = DB::table('users')->paginate(6);
+    protected function user(Request $request) {
 
-        return view('admin.users',[
-            'users' => $users
-        ]);
+        $texto=trim($request->get('texto'));
+        $users = DB::table('users')
+            ->select('id','username','full_name','email','role','identification_number','status')
+            ->where('full_name', 'LIKE', '%'.$texto.'%')
+            ->orWhere('identification_number', 'LIKE', '%'.$texto.'%')
+            ->orderBy('full_name','asc')
+            ->paginate(6);
+
+        return view('admin.users', compact('users','texto'));
+
     }
 
     protected function create(){
