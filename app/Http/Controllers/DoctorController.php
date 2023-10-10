@@ -14,12 +14,16 @@ class DoctorController extends Controller
         return view('doctor.home');
     }
 
-    protected function patient() {
-        $patients = DB::table('patients')->paginate(6);
+    protected function patient(Request $request) {
+        $texto=trim($request->get('texto'));
+        $patients = DB::table('patients')
+            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
+            ->where('name','LIKE', '%'.$texto.'%')
+            ->orWhere('identification', 'LIKE', '%'.$texto.'%')
+            ->orderBy('name','asc')
+            ->paginate(6);
 
-        return view('doctor.patient', [
-            'patients' => $patients
-        ]);
+        return view('doctor.patient', compact('patients', 'texto'));
     }
 
     protected function create(){
