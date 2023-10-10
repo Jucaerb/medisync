@@ -30,13 +30,13 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
-                    <input id="birth_date" name="birth_date" type="text" class="form-control"
-                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" maxlength="255"
-                           value="{{$patients->birth_date}}">
+                    <input id="birth_date" name="birth_date" type="date" class="form-control"
+                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" max="{{ date('Y-m-d') }}"
+                           value="{{$patients->birth_date}}" >
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fecha de ingreso</span>
-                    <input id="in_date" name="in_date" type="text" class="form-control"
+                    <input id="in_date" name="in_date" type="date" class="form-control" max="{{ date('Y-m-d') }}"
                            aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default" maxlength="255" value="{{$patients->in_date}}">
                 </div>
