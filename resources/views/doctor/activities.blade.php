@@ -7,9 +7,13 @@
             <p class="card-title text-aling-left text-body-title pb-3">Actividades</p>
             <div class="card mb-3">
                 <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href="{{ route('createactivity') }}" class="button-add a ">+ Añadir actividad</a>
-                    </div>
+                    <form action="{{route('activities')}}" method="get">
+                        <div class="d-flex flex-row align-items-start">
+                            <input type="text" class="form-control busqueda" name="texto" value="{{$texto}}">
+                            <input type="submit" class="btn btn-primary mx-2 button-buscar" value="Buscar">
+                            <a href="{{ route('createactivity') }}" class="button-add a ">+ Añadir actividad</a>
+                        </div>
+                    </form>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -30,33 +34,45 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($activities as $activity)
+                            @if(count($activities)<=0)
                                 <tr>
-                                    <td class="text-body-table"><strong>{{$activity->name_activity}}</strong></td>
-                                    <td class="text-body-table">{{__('passwords.'.$activity->min_permissions)}}</td>
-                                    <td class="text-body-table">{{__('passwords.'.$activity->temporality)}}</td>
-                                    <td class="text-body-table">{{$activity->schedule}}</td>
-                                    <td class="text-body-table">{{$activity->medicine_id}}</td>
-                                    <td class="text-body-table">{{$activity->dose}}</td>
-                                    <td class="text-body-table">{{$activity->via}}</td>
-                                    <td class="text-body-table">{{$activity->create_date}}</td>
-                                    <td class="text-body-table">{{$activity->suspension_date}}</td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-                                        <a>
-                                            <i class="bi bi-file-earmark-plus-fill" style="font-size: 1.4rem;"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-
-                                        <a href="{{route('editactivity', ['id' => $activity->id])}}">
-                                            <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
-                                        </a>
-                                    </td>
+                                    <td>No hay resultado</td>
                                 </tr>
-                            @endforeach
+                            @else
+                                @foreach($activities as $activity)
+                                    @include('doctor.deleteActivityModal')
+                                    <tr>
+                                        <td class="text-body-table"><strong>{{$activity->name_activity}}</strong></td>
+                                        <td class="text-body-table">{{__('passwords.'.$activity->min_permissions)}}</td>
+                                        <td class="text-body-table">{{__('passwords.'.$activity->temporality)}}</td>
+                                        <td class="text-body-table">{{$activity->schedule}}</td>
+                                        <td class="text-body-table">{{$activity->medicine_id}}</td>
+                                        <td class="text-body-table">{{$activity->dose}}</td>
+                                        <td class="text-body-table">{{$activity->via}}</td>
+                                        <td class="text-body-table">{{$activity->create_date}}</td>
+                                        <td class="text-body-table">{{$activity->suspension_date}}</td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <a>
+                                                <button type="button" data-bs-toggle="modal"
+                                                        data-bs-target="deleteActivityModal{{$activity->id}}"
+                                                        style="border: none; background: none">
+                                                    <i class="bi bi-trash" style="font-size: 1.4rem;"></i>
+                                                </button>
+
+                                            </a>
+                                        </td>
+                                        <td>
+
+                                            <a href="{{route('editactivity', ['id' => $activity->id])}}">
+                                                <i class="bi bi-pencil-square" style="font-size: 1.4rem;"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                             </tbody>
                         </table>
                     </div>

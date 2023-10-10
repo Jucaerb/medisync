@@ -92,12 +92,17 @@ class DoctorController extends Controller
         return view('doctor.createactivity', compact('patients'));
     }
 
-    Protected function Activities() {
-        $activities = DB::table('activities')->paginate(6);
+    Protected function Activities(Request $request) {
 
-        return view('doctor.activities', [
-            'activities' => $activities
-        ]);
+        $texto=trim($request->get('texto'));
+        $activities = DB::table('activities')
+            ->select('id','patient','name_activity','min_permissions','temporality',
+                'schedule','medicine_id','dose','via','observations','create_date','suspension_date')
+            ->where('name_activity', 'LIKE', '%'.$texto.'%' )
+            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')
+            ->paginate(6);
+
+        return view('doctor.activities', compact('activities', 'texto'));
     }
 
     protected function saveActivity(Request $request) {

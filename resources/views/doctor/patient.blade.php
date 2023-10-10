@@ -7,11 +7,11 @@
             <p class="card-title text-aling-left text-body-title pb-3">Mira tus pacientes activos</p>
             <div class="card mb-3">
                 <div class="card-header">
-                    <form action="{{route('admin.users')}}" method="get">
+                    <form action="{{route('patient')}}" method="get">
                         <div class="d-flex flex-row align-items-start">
                             <input type="text" class="form-control busqueda" name="texto" value="{{$texto}}">
                             <input type="submit" class="btn btn-primary mx-2 button-buscar" value="Buscar">
-                            <a href="{{ route('admin.registeruser') }}" class="button-add a mx-2">+ Añadir empleado</a>
+                            <a href="{{ route('registerpatient') }}" class="button-add a mx-2">+ Añadir paciente</a>
                         </div>
                     </form>
                 </div>
