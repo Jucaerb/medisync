@@ -89,9 +89,9 @@ class DoctorController extends Controller
     }
 
     Protected function Activities() {
-        $activities = DB::table('activities')->get(); //CAMBIAR CUANDO FUNCIONE PAGINACION
+        $activities = DB::table('activities')->paginate(6);
 
-        return view('doctor.createactivity', [
+        return view('doctor.activities', [
             'activities' => $activities
         ]);
     }

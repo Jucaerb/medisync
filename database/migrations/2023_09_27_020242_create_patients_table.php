@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('identification')->unique();
             $table->string('name');
             $table->string('sex');
-            $table->string('birth_date');
-            $table->string('in_date');
+            $table->date('birth_date');
+            $table->date('in_date');
             $table->string('room');
             $table->string('status');
             $table->timestamps();
