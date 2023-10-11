@@ -69,6 +69,8 @@ class DoctorController extends Controller
     }
 
     protected function saveEdit(Request $request){
+
+        $texto=trim($request->get('texto'));
         $patient = Patient::find($request->patient_id);
         $patient->identification = $request->identification;
         $patient->name = $request->name;
@@ -79,11 +81,14 @@ class DoctorController extends Controller
 
         $patient->save();
 
-        $patients = DB::table('patients')->get();
+        $patients = DB::table('patients')
+            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
+            ->where('name','LIKE', '%'.$texto.'%')
+            ->orWhere('identification', 'LIKE', '%'.$texto.'%')
+            ->orderBy('name','asc')
+            ->paginate(6);
 
-        return view('doctor.patient', [
-            'patient' => $patients
-        ]);
+        return view('doctor.patient',  compact('patients', 'texto'));
     }
 
     protected function createActivity() {
@@ -124,9 +129,11 @@ class DoctorController extends Controller
     }
 
     protected function saveEditActivity(Request $request){
+
+        $texto=trim($request->get('texto'));
         $activities = Activities::find($request->activities_id);
         $activities->name_activity = $request->name_activity;
-        $activities->min_permission = $request->min_permission;
+        $activities->min_permissions = $request->min_permissions;
         $activities->temporality = $request->temporality;
         $activities->schedule = $request->schedule;
         $activities->medicine_id = $request->medicine_id;
@@ -138,11 +145,14 @@ class DoctorController extends Controller
 
         $activities->save();
 
-        $activities = DB::table('activities')->get();
+        $activities = DB::table('activities')
+            ->select('id','patient','name_activity','min_permissions','temporality',
+                'schedule','medicine_id','dose','via','observations','create_date','suspension_date')
+            ->where('name_activity', 'LIKE', '%'.$texto.'%' )
+            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')
+            ->paginate(6);
 
-        return view('doctor.activities', [
-            'activity' => $activities
-        ]);
+        return view('doctor.activities', compact('activities', 'texto'));
     }
 
     protected function deleteActivity($id){

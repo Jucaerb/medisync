@@ -84,6 +84,8 @@ class UsersController extends Controller
     }
 
     protected function saveEdit(Request $request){
+
+        $texto=trim($request->get('texto'));
         $user = User::find($request->user_id);
         $user->full_name = $request->full_name;
         $user->username = $request->username;
@@ -97,10 +99,13 @@ class UsersController extends Controller
         }
         $user->save();
 
-        $users = DB::table('users')->get();
+        $users = DB::table('users')
+            ->select('id','username','full_name','email','role','identification_number','status')
+            ->where('full_name', 'LIKE', '%'.$texto.'%')
+            ->orWhere('identification_number', 'LIKE', '%'.$texto.'%')
+            ->orderBy('full_name','asc')
+            ->paginate(6);
 
-        return view('admin.users',[
-            'users' => $users
-        ]);
+        return view('admin.users', compact('users','texto'));
     }
 }
