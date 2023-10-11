@@ -49,6 +49,8 @@ Route::middleware(['authUser:DOCTOR,ADMIN,NURSE,BOSS_NURSE'])->group(function ()
     Route::get('/activities', [App\Http\Controllers\DoctorController::class, 'Activities'])->name('activities');
     Route::get('/editactivity', [App\Http\Controllers\DoctorController::class, 'updateActivity'])->name('editactivity');
     Route::post('/save-editactivitiy', [App\Http\Controllers\DoctorController::class, 'saveEditActivity'])->name('saveeditactivity');
+    Route::delete('/activity', [App\Http\Controllers\DoctorController::class, 'deleteActivity'])->name('deleteactivity');
+    Route::get('/dashboard', [App\Http\Controllers\DoctorController::class, 'dashboardPatient'])->name('dashboardpatient');
 
 });
 
