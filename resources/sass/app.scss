@@ -132,6 +132,27 @@ footer{
     cursor: pointer;
     outline: none;
 }
+.button-card {
+    width: 115px;
+    height: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .button-login:hover {
     background-color: #4d6de6;
@@ -196,7 +217,7 @@ footer{
 .text-body-medium2{
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 600;
-    font-size: 3.4 !important;
+    font-size: 3.4rem !important;
     color: #181e4b;
     text-decoration: none;
 }
@@ -205,6 +226,13 @@ footer{
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 600;
     font-size: 4.5rem !important;
+    color: #4475F2;
+    text-decoration: none;
+}
+.text-body-title2{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 3.8rem !important;
     color: #4475F2;
     text-decoration: none;
 }
