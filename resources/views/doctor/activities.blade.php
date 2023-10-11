@@ -57,7 +57,7 @@
                                         <td>
                                             <a>
                                                 <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="deleteActivityModal{{$activity->id}}"
+                                                        data- data-bs-target="#deleteActivityModal{{$activity->id}}"
                                                         style="border: none; background: none">
                                                     <i class="bi bi-trash" style="font-size: 1.4rem;"></i>
                                                 </button>
