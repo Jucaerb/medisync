@@ -145,16 +145,12 @@ class DoctorController extends Controller
         ]);
     }
 
-    protected function deleteActivity(){
-        try {
-            $activities = Activities::find();
-        }catch (\Exception $exception){
-            return redirect(route('activities'))->with('error', 'Ocurrió un error al eliminar la actividad');
-        }
+    protected function deleteActivity($id){
+        $activities = Activities::find($id);
 
         $activities->delete();
 
-        return redirect()->back()->with('success', 'Actividad creado correctamente');
+        return redirect(route('activities'))->with('success', 'Actividad eliminada correctamente');
     }
 
     protected function dashboardPatient(Request $request){
