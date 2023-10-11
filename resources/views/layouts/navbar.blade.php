@@ -91,7 +91,7 @@
                                     Consulta de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{route('dashboardpatient')}}">Dashboard</a></li>
                                     <li><a class="dropdown-item" href="#">Pendientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
