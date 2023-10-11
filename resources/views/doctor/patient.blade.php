@@ -27,7 +27,6 @@
                                 <th scope="col" class="text-body">Identificación</th>
                                 <th scope="col" class="text-body">Habitación</th>
                                 <th scope="col" class="text-body">Estado</th>
-                                <th scope="col" class="text-body">Historia clinica</th>
                                 <th scope="col" style="max-width: 120px;"></th>
                                 <th scope="col" style="max-width: 120px;"></th>
                             </tr>
@@ -65,11 +64,6 @@
                                         </td>
                                         <td>
 
-                                        </td>
-                                        <td>
-                                            <a>
-                                                <i class="bi bi-file-earmark-plus-fill" style="font-size: 1.4rem;"></i>
-                                            </a>
                                         </td>
                                         <td>
 
