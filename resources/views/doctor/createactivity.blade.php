@@ -21,7 +21,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
-                    <select id="patient" name="patient" class="form-select" aria-label="Default select example" required>
+                    <select id="patient" name="patient" class="form-select" aria-label="Default select example"
+                            required>
                         <option disabled selected value>Selecciona un paciente</option>
                         @foreach($patients as $patient)
                             <option value="{{$patient->name}}">{{$patient->name}}</option>
@@ -38,7 +39,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Permisos minimos</span>
-                    <select id="min_permissions" name="min_permissions" class="form-select" aria-label="Default select example" required>
+                    <select id="min_permissions" name="min_permissions" class="form-select"
+                            aria-label="Default select example" required>
                         <option disabled selected value>Selecciona una opción</option>
                         <option value="DOCTOR">Doctor</option>
                         <option value="BOSS_NURSE">Jefe de enfermeria</option>
@@ -48,7 +50,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Temporalidad</span>
-                    <select id="temporality" name="temporality" class="form-select" aria-label="Default select example" required>
+                    <select id="temporality" name="temporality" class="form-select" aria-label="Default select example"
+                            required>
                         <option disabled selected value>Selecciona una opción</option>
                         <option value="diary">Diario</option>
                         <option value="every 4 hours">Cada 4 horas</option>
@@ -66,7 +69,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Horario</span>
-                    <select id="schedule" name="schedule" class="form-select" aria-label="Default select example" required>
+                    <select id="schedule" name="schedule" class="form-select" aria-label="Default select example"
+                            required>
                         <option disabled selected value>Selecciona una opción</option>
                         <option value="00:00 - 02:00">00:00 - 02:00</option>
                         <option value="02:00 - 04:00">02:00 - 04:00</option>
@@ -120,7 +124,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observaciones</span>
-                    <input id="observations" name="observations" type="text" class="form-control" aria-label="Sizing example input"
+                    <input id="observations" name="observations" type="text" class="form-control"
+                           aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default" maxlength="200" required>
                 </div>
 
@@ -129,7 +134,9 @@
                         <button type="submit" class="button-usuario" style="margin-right: 5px;">Crear</button>
                     </div>
                     <div>
-                        <button type="button" data-bs-toggle="modal" class="button-regresar"  data- data-bs-target="#cancelModal">Cancelar</button>
+                        <button type="button" data-bs-toggle="modal" class="button-regresar" data-
+                                data-bs-target="#cancelModal">Cancelar
+                        </button>
                     </div>
                 </div>
             </form>
