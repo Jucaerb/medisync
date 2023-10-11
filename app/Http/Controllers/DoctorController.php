@@ -174,4 +174,9 @@ class DoctorController extends Controller
 
         return view('doctor.dashboardpatient', compact('patients', 'texto'));
     }
+    protected function listActivities() {
+        $activities = Activity::all();
+
+        return view('doctor.dashboardpatient', ['activities' => $activities]);
+    }
 }
