@@ -125,7 +125,6 @@ class DoctorController extends Controller
 
     protected function saveEditActivity(Request $request){
         $activities = Activities::find($request->activities_id);
-        $activities->patient = $request->patient;
         $activities->name_activity = $request->name_activity;
         $activities->min_permission = $request->min_permission;
         $activities->temporality = $request->temporality;
@@ -144,5 +143,29 @@ class DoctorController extends Controller
         return view('doctor.activities', [
             'activity' => $activities
         ]);
+    }
+
+    protected function deleteActivity(){
+        try {
+            $activities = Activities::find();
+        }catch (\Exception $exception){
+            return redirect(route('activities'))->with('error', 'Ocurrió un error al eliminar la actividad');
+        }
+
+        $activities->delete();
+
+        return redirect()->back()->with('success', 'Actividad creado correctamente');
+    }
+
+    protected function dashboardPatient(Request $request){
+
+        $texto=trim($request->get('texto'));
+        $patients = DB::table('patients')
+            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
+            ->where('name','LIKE', '%'.$texto.'%')
+            ->orderBy('name','asc')
+            ->paginate(6);
+
+        return view('doctor.dashboardpatient', compact('patients', 'texto'));
     }
 }
