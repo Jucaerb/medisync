@@ -43,21 +43,31 @@ class DoctorController extends Controller
     protected function inactivePatient(Request $request){
         Patient::inactivePatient(intval($request->id));
 
-        $patient = DB::table('patients')->get();
+        $texto=trim($request->get('texto'));
 
-        return view('doctor.patient', [
-           'patient' => $patient
-        ]);
+        $patients = DB::table('patients')
+            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
+            ->where('name','LIKE', '%'.$texto.'%')
+            ->orWhere('identification', 'LIKE', '%'.$texto.'%')
+            ->orderBy('name','asc')
+            ->paginate(6);
+
+        return view('doctor.patient', compact('patients', 'texto'));
     }
 
     protected function activePatient(Request $request){
         Patient::activePatient(intval($request->id));
 
-        $patient = DB::table('patients')->get();
+        $texto=trim($request->get('texto'));
 
-        return view('doctor.patient', [
-           'patient' => $patient
-        ]);
+        $patients = DB::table('patients')
+            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
+            ->where('name','LIKE', '%'.$texto.'%')
+            ->orWhere('identification', 'LIKE', '%'.$texto.'%')
+            ->orderBy('name','asc')
+            ->paginate(6);
+
+        return view('doctor.patient', compact('patients', 'texto'));
     }
 
     protected function updatedPatient(request $request){

@@ -58,21 +58,31 @@ class UsersController extends Controller
     protected function inactivateUser(request $request){
         User::inactivateUser(intval($request->id));
 
-        $users = DB::table('users')->get();
+        $texto=trim($request->get('texto'));
 
-        return view('admin.users', [
-            'users' => $users
-        ]);
+        $users = DB::table('users')
+            ->select('id','username','full_name','email','role','identification_number','status')
+            ->where('full_name', 'LIKE', '%'.$texto.'%')
+            ->orWhere('identification_number', 'LIKE', '%'.$texto.'%')
+            ->orderBy('full_name','asc')
+            ->paginate(6);
+
+        return view('admin.users', compact('users','texto'));
     }
 
     protected function activateUser(request $request){
         User::activateUser(intval($request->id));
 
-        $users = DB::table('users')->get();
+        $texto=trim($request->get('texto'));
 
-        return view('admin.users', [
-            'users' => $users
-        ]);
+        $users = DB::table('users')
+            ->select('id','username','full_name','email','role','identification_number','status')
+            ->where('full_name', 'LIKE', '%'.$texto.'%')
+            ->orWhere('identification_number', 'LIKE', '%'.$texto.'%')
+            ->orderBy('full_name','asc')
+            ->paginate(6);
+
+        return view('admin.users', compact('users','texto'));
     }
 
     protected function updatedUser(request $request){
