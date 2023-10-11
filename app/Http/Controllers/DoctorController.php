@@ -117,7 +117,7 @@ class DoctorController extends Controller
             return redirect(route('activities'))->with('error', 'Ocurrió un error al crear la actividad');
         }
 
-        return redirect(route('activities'))->with('success', 'Actividad creado correctamente');
+        return redirect(route('createactivity'))->with('success', 'Actividad creado correctamente');
     }
 
     protected function updateActivity(Request $request){
@@ -167,16 +167,12 @@ class DoctorController extends Controller
 
         $texto=trim($request->get('texto'));
         $patients = DB::table('patients')
-            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
+            ->join('activities', 'patients.name', '=', 'activities.patient')
+            ->select('patients.*', 'activities.name_activity', 'patients.name')
             ->where('name','LIKE', '%'.$texto.'%')
             ->orderBy('name','asc')
-            ->paginate(6);
+            ->paginate(8);
 
         return view('doctor.dashboardpatient', compact('patients', 'texto'));
-    }
-    protected function listActivities() {
-        $activities = Activity::all();
-
-        return view('doctor.dashboardpatient', ['activities' => $activities]);
     }
 }
