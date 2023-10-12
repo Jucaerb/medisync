@@ -182,6 +182,7 @@ class DoctorController extends Controller
     }
 
     protected function dashboardPatient(Request $request){
+//        $activities = Activities::all()->groupBy('id_patient')->toArray();
 
         $texto=trim($request->get('texto'));
         $patients = DB::table('patients')
@@ -191,6 +192,6 @@ class DoctorController extends Controller
             ->orderBy('name','asc')
             ->paginate(8);
 
-        return view('doctor.dashboardpatient', compact('patients', 'texto'));
+        return view('doctor.dashboardpatient', compact('patients', 'texto')); //, 'activities'
     }
 }

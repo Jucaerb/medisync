@@ -53,3 +53,13 @@
     </div>
 
 @endsection
+
+{{--@foreach($activities as $key => $value)--}}
+{{--    @if($key == $patient->id)--}}
+{{--        <div class="card-body">--}}
+{{--            <ul>--}}
+{{--                <li class="text-body-table">{{$value}}</li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--    @endif--}}
+{{--@endforeach--}}
