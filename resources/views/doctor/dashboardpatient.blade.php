@@ -46,9 +46,9 @@
                         </div>
                     @endforeach
                 </div>
-                {{--                {{$dashboardPatient->links('vendor.pagination.simple-bootstrap-5')}}--}}
                 <!-- Fin de las tarjetas de pacientes -->
             </div>
+            {{$patients->links('vendor.pagination.simple-bootstrap-5')}}
         </div>
     </div>
 
