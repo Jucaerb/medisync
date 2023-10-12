@@ -40,7 +40,7 @@
                                 <!-- Pie de la tarjeta -->
                                 <div class="card-footer border-0 d-flex justify-content-between align-items-center"
                                      style="padding-left: 10px; padding-right: 10px;">
-                                    <a class="button-card a">Ver todas</a>
+                                    <a class="button-card a" href="{{route('activities', ['filter' => $patient->id])}}">Ver todas</a>
                                 </div>
                             </div>
                         </div>

@@ -25,7 +25,7 @@
                             required>
                         <option disabled selected value>Selecciona un paciente</option>
                         @foreach($patients as $patient)
-                            <option value="{{$patient->name}}">{{$patient->name}}</option>
+                            <option value="{{$patient->id}}">{{$patient->name}}</option>
                         @endforeach
                     </select>
                 </div>

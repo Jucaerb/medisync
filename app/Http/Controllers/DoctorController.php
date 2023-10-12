@@ -110,12 +110,20 @@ class DoctorController extends Controller
     Protected function Activities(Request $request) {
 
         $texto=trim($request->get('texto'));
-        $activities = DB::table('activities')
-            ->select('id','patient','name_activity','min_permissions','temporality',
-                'schedule','medicine_id','dose','via','observations','create_date','suspension_date')
-            ->where('name_activity', 'LIKE', '%'.$texto.'%' )
-            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')
-            ->paginate(6);
+
+        $filter = false;
+
+        if (!$request->get('filter') == null){
+            $filter = $request->get('filter');
+            $activities = Activities::indexActivities($request, $texto, $filter)
+                ->where('id_patient', 1);
+        } else {
+            $activities = Activities::indexActivities($request, $texto, $filter);
+        }
+
+//        $activities = $activities->paginate(8);
+
+        dd($activities->paginate(4), $filter);
 
         return view('doctor.activities', compact('activities', 'texto'));
     }

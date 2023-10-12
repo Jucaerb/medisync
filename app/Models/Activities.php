@@ -12,12 +12,15 @@ class Activities extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'activities';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'id_patient',
         'patient',
         'name_activity',
         'min_permissions',
@@ -33,8 +36,11 @@ class Activities extends Authenticatable
 
     public static function createActivity($request){
 //        dd($request);
+        $patient = Patient::find($request->input('patient'));
+
         return Activities::Create([
-            "patient" => $request->input('patient'),
+            "id_patient" => $patient->id,
+            "patient" => $patient->name,
             "name_activity" => $request->input('name_activity'),
             "min_permissions" => $request->input('min_permissions'),
             "temporality" => $request->input('temporality'),
@@ -48,4 +54,7 @@ class Activities extends Authenticatable
         ]);
     }
 
+    public static function indexActivities($request, $texto, $filter){
+        return self;
+    }
 }
