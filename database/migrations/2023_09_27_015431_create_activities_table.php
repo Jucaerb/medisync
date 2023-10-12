@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id');
+            $table->string('id_patient');
             $table->string('patient');
             $table->string('name_activity');
             $table->string('min_permissions');
