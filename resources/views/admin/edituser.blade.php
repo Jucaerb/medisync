@@ -12,14 +12,14 @@
                     <input id="full_name" name="full_name" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            maxlength="255"
-                           value="{{$user->full_name}}">
+                           value="{{$user->full_name}}" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Usuario</span>
                     <input id="username" name="username" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            maxlength="255"
-                           value="{{$user->username}}">
+                           value="{{$user->username}}" required>
                 </div>
                 <input type="hidden" id="user_id" name="user_id" value="{{$user->id}}">
                 <div class="input-group mb-3">
@@ -27,16 +27,17 @@
                     <input id="identification_number" name="identification_number" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            maxlength="255"
-                           value="{{$user->identification_number}}">
+                           value="{{$user->identification_number}}" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Correo electrónico</span>
                     <input id="email" name="email" type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" maxlength="255" value="{{$user->email}}">
+                           aria-describedby="inputGroup-sizing-default" maxlength="255" value="{{$user->email}}"
+                           required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Rol principal</span>
-                    <select id="role" name="role" class="form-select" aria-label="Default select example">
+                    <select id="role" name="role" class="form-select" aria-label="Default select example" required>
                         <option>Selecciona una opción</option>
                         <option value="DOCTOR" {{$user->role == 'DOCTOR' ? 'selected':''}}>Doctor</option>
                         <option value="BOSS_NURSE" {{$user->role == 'BOSS_NURSE' ? 'selected':''}}>Jefe de enfermeria
@@ -51,12 +52,12 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
                     <input id="password" name="password" type="password" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           maxlength="255">
+                           maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Confirmar contraseña</span>
                     <input type="password" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" maxlength="255">
+                           aria-describedby="inputGroup-sizing-default" maxlength="255" required>
                 </div>
                 <div class="d-flex justify-content-start">
                     <div class="pr-5">
