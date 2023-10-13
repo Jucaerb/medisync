@@ -41,6 +41,7 @@
                             @else
                                 @foreach($activities as $activity)
                                     @include('doctor.deleteActivityModal')
+{{--                                    <input type="hidden" id="activities_id" name="activities_id" value="{{$activity->id_patient}}">--}}
                                     <tr>
                                         <td class="text-body-table"><strong>{{$activity->name_activity}}</strong></td>
                                         <td class="text-body-table">{{__('passwords.'.$activity->min_permissions)}}</td>
