@@ -32,15 +32,20 @@
                                     <i class="bi bi-person-square" style="font-size: 3.4rem;"></i>
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
-                                <div class="card-body">
-                                    <ul>
-                                        <li class="text-body-table">{{$patient->name_activity}}</li>
-                                    </ul>
-                                </div>
+                                @foreach($activities as $key => $value)
+                                    @if($key == $patient->id)
+                                        <div class="card-body">
+                                            <ul>
+                                                <li class="text-body-table">{{$value}}</li>
+                                            </ul>
+                                        </div>
+                                    @endif
+                                @endforeach
                                 <!-- Pie de la tarjeta -->
                                 <div class="card-footer border-0 d-flex justify-content-between align-items-center"
                                      style="padding-left: 10px; padding-right: 10px;">
-                                    <a class="button-card a" href="{{route('activities', ['filter' => $patient->id])}}">Ver todas</a>
+                                    <a class="button-card a" href="{{route('activities', ['filter' => $patient->id])}}">Ver
+                                        todas</a>
                                 </div>
                             </div>
                         </div>
@@ -53,13 +58,3 @@
     </div>
 
 @endsection
-
-{{--@foreach($activities as $key => $value)--}}
-{{--    @if($key == $patient->id)--}}
-{{--        <div class="card-body">--}}
-{{--            <ul>--}}
-{{--                <li class="text-body-table">{{$value}}</li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--    @endif--}}
-{{--@endforeach--}}

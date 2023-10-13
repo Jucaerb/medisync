@@ -182,16 +182,22 @@ class DoctorController extends Controller
     }
 
     protected function dashboardPatient(Request $request){
-//        $activities = Activities::all()->groupBy('id_patient')->toArray();
+
+        $activities = Activities::all()->groupBy( 'id_patient');
+
+//        $activitiesArray = $activities->toArray();
 
         $texto=trim($request->get('texto'));
-        $patients = DB::table('patients')
-            ->join('activities', 'patients.name', '=', 'activities.patient')
-            ->select('patients.*', 'activities.name_activity', 'patients.name')
+
+        $patients =DB::table('patients')
+            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
             ->where('name','LIKE', '%'.$texto.'%')
+            ->orWhere('identification', 'LIKE', '%'.$texto.'%')
             ->orderBy('name','asc')
             ->paginate(8);
 
-        return view('doctor.dashboardpatient', compact('patients', 'texto')); //, 'activities'
+//        dd($activities);
+
+        return view('doctor.dashboardpatient', compact('patients','activities', 'texto'));
     }
 }
