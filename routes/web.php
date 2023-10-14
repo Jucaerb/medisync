@@ -40,16 +40,16 @@ Route::middleware(['authUser:DOCTOR,ADMIN'])->group(function () {
     Route::post('/save-edit', [App\Http\Controllers\DoctorController::class, 'saveEdit'])->name('saveedit');
     Route::put('/patient-inactive', [App\Http\Controllers\DoctorController::class, 'inactivePatient'])->name('inactivePatient');
     Route::put('/patient-activate', [App\Http\Controllers\DoctorController::class, 'activePatient'])->name('activePatient');
+    Route::get('/createactivity', [App\Http\Controllers\DoctorController::class, 'createActivity'])->name('createactivity');
+    Route::post('/save-activity', [App\Http\Controllers\DoctorController::class, 'saveActivity'])->name('saveactivity');
+    Route::get('/editactivity', [App\Http\Controllers\DoctorController::class, 'updateActivity'])->name('editactivity');
+    Route::post('/save-editactivitiy', [App\Http\Controllers\DoctorController::class, 'saveEditActivity'])->name('saveeditactivity');
+    Route::delete('/activity/{id}', [App\Http\Controllers\DoctorController::class, 'deleteActivity'])->name('deleteactivity');
 
 });
 
 Route::middleware(['authUser:DOCTOR,ADMIN,NURSE,BOSS_NURSE'])->group(function () {
-    Route::get('/createactivity', [App\Http\Controllers\DoctorController::class, 'createActivity'])->name('createactivity');
-    Route::post('/save-activity', [App\Http\Controllers\DoctorController::class, 'saveActivity'])->name('saveactivity');
     Route::get('/activities', [App\Http\Controllers\DoctorController::class, 'Activities'])->name('activities');
-    Route::get('/editactivity', [App\Http\Controllers\DoctorController::class, 'updateActivity'])->name('editactivity');
-    Route::post('/save-editactivitiy', [App\Http\Controllers\DoctorController::class, 'saveEditActivity'])->name('saveeditactivity');
-    Route::delete('/activity/{id}', [App\Http\Controllers\DoctorController::class, 'deleteActivity'])->name('deleteactivity');
     Route::get('/dashboard', [App\Http\Controllers\DoctorController::class, 'dashboardPatient'])->name('dashboardpatient');
     Route::get('/listActivities', [App\Http\Controllers\DoctorController::class, 'listActivities'])->name('listactivities');
 
