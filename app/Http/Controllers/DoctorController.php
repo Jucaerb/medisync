@@ -111,19 +111,8 @@ class DoctorController extends Controller
 
         $texto=trim($request->get('texto'));
 
-        $filter = false;
+        $activities = Activities::indexActivities(intval($request->get('filter')),$texto)->paginate(8);
 
-        if (!$request->get('filter') == null){
-            $filter = $request->get('filter');
-            $activities = Activities::indexActivities($request, $texto, $filter)
-                ->where('id_patient', 1);
-        } else {
-            $activities = Activities::indexActivities($request, $texto, $filter);
-        }
-
-//        $activities = $activities->paginate(8);
-
-        dd($activities->paginate(4), $filter);
 
         return view('doctor.activities', compact('activities', 'texto'));
     }

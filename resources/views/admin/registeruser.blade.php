@@ -61,7 +61,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Confirmar contraseña</span>
-                    <input type="password" class="form-control" aria-label="Sizing example input"
+                    <input id="confirm-password" name="confirm-password" type="password" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default" maxlength="255" required>
                 </div>
                 <div class="d-flex justify-content-start">

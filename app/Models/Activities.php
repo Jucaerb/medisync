@@ -35,9 +35,7 @@ class Activities extends Authenticatable
     ];
 
     public static function createActivity($request){
-//        dd($request);
         $patient = Patient::find($request->input('patient'));
-
         return Activities::Create([
             "id_patient" => $patient->id,
             "patient" => $patient->name,
@@ -54,7 +52,13 @@ class Activities extends Authenticatable
         ]);
     }
 
-    public static function indexActivities($request, $texto, $filter){
-        return self;
+    public static function indexActivities($idPatient,$texto){
+        return self::
+        when(($idPatient != null), function ($query) use ($idPatient){
+            return $query->where('id_patient', $idPatient);
+        })
+        ->where('name_activity', 'LIKE', '%'.$texto.'%' )
+        ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')
+        ;
     }
 }

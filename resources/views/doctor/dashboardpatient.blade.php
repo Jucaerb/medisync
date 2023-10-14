@@ -34,11 +34,13 @@
                                 <!-- Cuerpo de la tarjeta -->
                                 @foreach($activities as $key => $value)
                                     @if($key == $patient->id)
-                                        <div class="card-body">
-                                            <ul>
-                                                <li class="text-body-table">{{$value}}</li>
-                                            </ul>
-                                        </div>
+                                        @foreach($value as $jsonData)
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li class="text-body-table">{{$jsonData->name_activity}}</li>
+                                                </ul>
+                                            </div>
+                                        @endforeach
                                     @endif
                                 @endforeach
                                 <!-- Pie de la tarjeta -->
