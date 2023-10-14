@@ -36,7 +36,6 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Nueva historia clinica</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -82,7 +81,6 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="{{route('patient')}}">Visualización de pacientes</a></li>
-                                    <li><a class="dropdown-item" href="#">Nueva historia clinica</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -97,19 +95,6 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="#">Terminados</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    Kardex de medicamentos
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Nuevo medicamento</a></li>
-                                    <li><a class="dropdown-item" href="#">Revisar inventario</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -235,19 +220,7 @@
                             </li>
                             @break
                         @case('INVENTORY')
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    Kardex de medicamentos
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Nuevo medicamento</a></li>
-                                    <li><a class="dropdown-item" href="#">Revisar inventario</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                </ul>
-                            </li>
+
                             @break
                     @endswitch
                 @endif
