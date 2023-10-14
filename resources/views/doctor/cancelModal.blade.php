@@ -9,7 +9,7 @@
                 <p class="text-body-medium">Cancelar formulario</p>
                 <p class="only-text-regular">¿Está seguro de que desea cancelar?</p>
             </div>
-            <form action="{{route('home')}}" method="GET">
+            <form action="{{route('login')}}" method="GET">
                 @csrf
                 <div class="modal-footer" style="border-top: none;">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
