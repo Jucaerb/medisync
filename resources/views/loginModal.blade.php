@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="w-100 float-to-right mx-2">
-                    <a class="headline-1 align-bottom">
+                    <a class="text-body-medium align-bottom">
                         MediSync
                         <img width="48" height="48" src="{{ asset('images/logo.png')}}">
                     </a>
@@ -14,12 +14,12 @@
                 <div class="d-flex justify-content-center">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="text-center headline-2">
+                        <div class="text-center text-body-login-modal">
                                 LOGIN
                         </div>
                         <div class="mb-3 mt-2">
                             <div>
-                                <label for="email" class="headline-1 size-login">Usuario:</label>
+                                <label for="email" class="text-body-medium size-login">Correo:</label>
                             </div>
                             <div class="">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror input-login" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="mb-5 mt-4">
-                            <label for="password" class="headline-1 size-login">Contraseña:</label>
+                            <label for="password" class="text-body-medium size-login">Contraseña:</label>
                             <div class="">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror input-login" name="password" required autocomplete="current-password" aria-describedby="passwordHelp">
                                 @error('password')

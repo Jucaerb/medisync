@@ -8,46 +8,10 @@
 @import 'bootstrap/scss/bootstrap';
 
 
-
-body{
-    margin: opx;
-    font-size: .9rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #212529;
-    text-align: left;
-
-}
-
-.headline-1{
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-weight: 600;
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
-}
-
-.headline-2{
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-weight: 800;
-    text-decoration: none;
-    color: black;
-    font-size: 28px;
-}
-
-
 .size-login{
-    font-size: 16px !important;
-}
-.navbar-laravel
-{
-    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+    font-size: 1rem !important;
 }
 
-.navbar-brand , .nav-link, .my-form, .login-form
-{
-    font-family: Raleway, sans-serif;
-}
 
 .my-form
 {
@@ -102,15 +66,10 @@ a {
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
     color: #050505;
 }
-.nav-list li {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 
-.nav-list li a:hover:before {
-    margin-left: 0;
-    opacity: 1;
-    visibility: visible;
+.texto-limitada{
+    max-width: 26rem;
+    max-height: 12.5rem;
 }
 
 ul, ol {
@@ -132,32 +91,15 @@ ul, ol {
 .social-container .col {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.nav-list li a:before {
-    content: "\f14f";
-    font: 400 21px/1 "Material Design Icons";
-    color: #4d6de6;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-left: -28px;
-    margin-right: 7px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .22s ease;
-}
-.card {
-    // max-width: 600px;
-    width: 85%; /* Ancho de la tarjeta */
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 40vh;
 }
 footer{
-    margin-top: auto;
+    margin-top: 20px;
+
 }
 
 .button-login {
@@ -165,7 +107,7 @@ footer{
     height: 45px;
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     background-color: #4d6de6;
     border: none;
@@ -174,6 +116,42 @@ footer{
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+}
+.button-modal {
+    width: 100px;
+    height: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.button-card {
+    width: 115px;
+    height: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .button-login:hover {
@@ -192,15 +170,71 @@ footer{
 }
 
 .text-body-big{
-    font-size: 72px !important;
+    font-size: 4.5rem !important;
     color: #181e4b;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 800;
+}
+
+.text-body-login-modal{
+    font-size: 48px !important;
+    color: #181e4b;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 800;
 }
 
 .text-body-small{
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 400;
-    font-size: 16px !important;
+    font-size: 1rem !important;
     color: #181e4b;
+}
+.text-body-table{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 0.9rem !important;
+    color: #181e4b;
+}
+.text-body{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    color: #181e4b;
+}
+.text-body-button{
+
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 0.75rem !important;
+    color: #181e4b;
+}
+
+.text-body-medium{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 1rem !important;
+    color: #181e4b;
+    text-decoration: none;
+}
+.text-body-medium2{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 3.4rem !important;
+    color: #181e4b;
+    text-decoration: none;
+}
+
+.text-body-title{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 4.5rem !important;
+    color: #4475F2;
+    text-decoration: none;
+}
+.text-body-title2{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 3.8rem !important;
+    color: #4475F2;
+    text-decoration: none;
 }
 
 .only-text-regular{
@@ -210,6 +244,160 @@ footer{
 }
 
 .text-regular-size{
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
+}
+.img-responsive{
+    width: 100%;
+    height: auto;
+}
+
+.navbar-transparent{
+    background-color: transparent !important;
+}
+ .margin-navbar{
+     margin-left: 40px;
+     margin-right: 40px;
+ }
+
+ .button-body {
+    width: 180px;
+    height: 55px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 34px;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+}
+.input-group-text{
+    width: 180px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    color: #000;
+}
+.button-email {
+    width: 250px;
+    height: 45px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.button-add {
+    width: 190px;
+    height: 37px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.bg-azul-claro{
+    background: #EDF2FE !important;
+}
+.button-regresar{
+    width: 218px;
+    height: 42px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+    background-color: #5E6282;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+}
+
+.button-usuario {
+
+    width: 218px;
+    height: 42px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+
+}
+
+
+.a {
+    text-decoration: none;
+    color: white;
+}
+
+a .bi-input-cursor {
+    color: #344054;
+}
+.custom-badge-active {
+    background-color: #ECFDF3;
+    color: #037847;
+}
+.custom-badge-inactive{
+    background-color:#F2F4F7;
+    color: #333742;
+
+}
+.busqueda{
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.button-buscar{
+    width: 100px;
+    height: 37px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color: #4d6de6;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
 }
 
