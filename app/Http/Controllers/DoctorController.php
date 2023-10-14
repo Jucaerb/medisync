@@ -113,7 +113,6 @@ class DoctorController extends Controller
 
         $activities = Activities::indexActivities(intval($request->get('filter')),$texto)->paginate(8);
 
-
         return view('doctor.activities', compact('activities', 'texto'));
     }
 

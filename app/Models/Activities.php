@@ -54,11 +54,13 @@ class Activities extends Authenticatable
 
     public static function indexActivities($idPatient,$texto){
         return self::
-        when(($idPatient != null), function ($query) use ($idPatient){
+        when((!empty($texto)), function ($cons) use ($texto){
+            return  $cons->where('name_activity', 'LIKE', '%'.$texto.'%' )
+            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%');
+        })
+        ->when(($idPatient != null), function ($query) use ($idPatient){
             return $query->where('id_patient', $idPatient);
         })
-        ->where('name_activity', 'LIKE', '%'.$texto.'%' )
-        ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')
         ;
     }
 }
