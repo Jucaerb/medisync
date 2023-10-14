@@ -129,7 +129,7 @@ class DoctorController extends Controller
     protected function updateActivity(Request $request){
         $activities = Activities::find($request->id);
 
-        return view('doctor.editactivity', [
+        return view('doctor.editActivity', [
             'activity' => $activities
         ]);
     }
