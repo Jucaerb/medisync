@@ -36,6 +36,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
+                                    <li><a class="dropdown-item" href="{{route('createactivity')}}">Creación de actividades</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -60,7 +61,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Lector de QR</a></li>
                                     <li><a class="dropdown-item" href="#">Registro de atención</a></li>
-                                    <li><a class="dropdown-item" href="{{route('createactivity')}}">Creación de actividades</a></li>
                                     <li><a class="dropdown-item" href="{{route('activities')}}">Visualización de actividades</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -75,12 +75,12 @@
                                     Registro de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Gestión de pacientes</a></li>
                                     <li><a class="dropdown-item" href="{{route('registerpatient')}}">Nuevo paciente</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="{{route('patient')}}">Visualización de pacientes</a></li>
+                                    <li><a class="dropdown-item" href="{{route('createactivity')}}">Creación de actividades</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -105,7 +105,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Lector de QR</a></li>
                                     <li><a class="dropdown-item" href="#">Registro de atención</a></li>
-                                    <li><a class="dropdown-item" href="{{route('createactivity')}}">Creación de actividades</a></li>
                                     <li><a class="dropdown-item" href="{{route('activities')}}">Visualización de actividades</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -151,7 +150,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Lector de QR</a></li>
                                     <li><a class="dropdown-item" href="#">Registro de atención</a></li>
-                                    <li><a class="dropdown-item" href="{{route('createactivity')}}">Creación de actividades</a></li>
                                     <li><a class="dropdown-item" href="{{route('activities')}}">Visualización de actividades</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -166,7 +164,7 @@
                                     Consulta de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{route('dashboardpatient')}}">Dashboard</a></li>
                                     <li><a class="dropdown-item" href="#">Pendientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -182,7 +180,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Lector de QR</a></li>
                                     <li><a class="dropdown-item" href="#">Registro de atención</a></li>
-                                    <li><a class="dropdown-item" href="{{route('createactivity')}}">Creación de actividades</a></li>
                                     <li><a class="dropdown-item" href="{{route('activities')}}">Visualización de actividades</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
