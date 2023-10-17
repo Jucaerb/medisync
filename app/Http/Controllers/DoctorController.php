@@ -111,7 +111,7 @@ class DoctorController extends Controller
 
         $texto=trim($request->get('texto'));
 
-        $activities = Activities::indexActivities(intval($request->get('filter')),$texto)->paginate(8);
+        $activities = Activities::indexActivities(intval($request->get('filter')),$texto);
 
         return view('doctor.activities', compact('activities', 'texto'));
     }
@@ -173,8 +173,6 @@ class DoctorController extends Controller
 
         $activities = Activities::all()->groupBy( 'id_patient');
 
-//        $activitiesArray = $activities->toArray();
-
         $texto=trim($request->get('texto'));
 
         $patients =DB::table('patients')
@@ -183,8 +181,6 @@ class DoctorController extends Controller
             ->orWhere('identification', 'LIKE', '%'.$texto.'%')
             ->orderBy('name','asc')
             ->paginate(8);
-
-//        dd($activities);
 
         return view('doctor.dashboardpatient', compact('patients','activities', 'texto'));
     }
