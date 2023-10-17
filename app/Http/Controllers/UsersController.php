@@ -95,18 +95,26 @@ class UsersController extends Controller
 
     protected function saveEdit(Request $request){
 
-        $texto=trim($request->get('texto'));
-        $user = User::find($request->user_id);
-        $user->full_name = $request->full_name;
-        $user->username = $request->username;
-        $user->identification_number = $request->identification_number;
-        $user->email = $request->email;
-        $user->role = $request->role;
-        if ($request->password == null){
-            //
-        } else {
-            $user->password = Hash::make($request->password);
+        $confirmPass = false;
+        if ($request->input('password') === $request->input('confirm-password')){
+            $confirmPass = true;
         }
+        if (!$confirmPass){
+            return redirect(route('admin.users'))->with('error', 'Las contraseñas no coinciden');
+        }
+        try {
+            $user = User::find($request->user_id);
+            $user->full_name = $request->full_name;
+            $user->username = $request->username;
+            $user->identification_number = $request->identification_number;
+            $user->email = $request->email;
+            $user->role = $request->role;
+        }catch (\Exception $exception){
+            return redirect(route('admin.users'))->with('error', 'Ocurrió un error al crear el usuario');
+        }
+
+        $texto=trim($request->get('texto'));
+
         $user->save();
 
         $users = DB::table('users')
