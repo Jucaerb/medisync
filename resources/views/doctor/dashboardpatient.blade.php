@@ -12,7 +12,6 @@
                         <div class="d-flex flex-row align-items-start">
                             <input type="text" class="form-control busqueda" name="texto" value="{{ $texto }}">
                             <input type="submit" class="btn btn-primary mx-2 button-buscar" value="Buscar">
-{{--                            <a href="{{ route('createactivity') }}" class="button-card a">+ Añadir actividad</a>--}}
                         </div>
                     </form>
                 </div>
