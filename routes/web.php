@@ -51,7 +51,6 @@ Route::middleware(['authUser:DOCTOR,ADMIN'])->group(function () {
 Route::middleware(['authUser:DOCTOR,ADMIN,NURSE,BOSS_NURSE'])->group(function () {
     Route::get('/activities', [App\Http\Controllers\DoctorController::class, 'Activities'])->name('activities');
     Route::get('/dashboard', [App\Http\Controllers\DoctorController::class, 'dashboardPatient'])->name('dashboardpatient');
-    Route::get('/listActivities', [App\Http\Controllers\DoctorController::class, 'listActivities'])->name('listactivities');
 
 });
 
