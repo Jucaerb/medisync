@@ -31,7 +31,8 @@ class Activities extends Authenticatable
         'via',
         'create_date',
         'suspension_date',
-        'observations'
+        'observations',
+        'status'
     ];
 
     public static function createActivity($request){
@@ -48,7 +49,8 @@ class Activities extends Authenticatable
             "via" => $request->input('via'),
             "create_date" => $request->input('create_date'),
             "suspension_date" => $request->input('suspension_date'),
-            "observations" => $request->input('observations')
+            "observations" => $request->input('observations'),
+            "status" => 'ACTIVE',
         ]);
     }
 

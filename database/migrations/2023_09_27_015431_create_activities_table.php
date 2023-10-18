@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('create_date');
             $table->string('suspension_date');
             $table->string('observations');
+            $table->string('status');
             $table->timestamps();
         });
     }
