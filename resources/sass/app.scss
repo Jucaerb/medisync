@@ -194,6 +194,7 @@ footer{
     font-weight: 400;
     font-size: 0.9rem !important;
     color: #181e4b;
+
 }
 .text-body{
     font-family: 'Plus Jakarta Sans', sans-serif !important;
@@ -399,5 +400,9 @@ a .bi-input-cursor {
     justify-content: center;
     text-align: center;
     text-decoration: none;
+}
+.card-body{
+    padding-top: 0.2rem  !important;
+    padding-bottom: 0.2rem  !important;
 }
 

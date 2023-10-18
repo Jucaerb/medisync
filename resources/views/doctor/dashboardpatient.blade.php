@@ -32,16 +32,33 @@
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
                                 @foreach($activities as $key => $value)
-                                    @if($key == $patient->id)
-                                        @foreach($value as $jsonData)
+                                    @if ($key == $patient->id && count($value) > 0)
+                                        @php $shownActivities = 0; @endphp
+                                        @foreach ($value as $jsonData)
+                                            @if ($shownActivities < 3)
+                                                <div class="card-body">
+                                                    <ul>
+                                                        <li class="text-body-table">
+                                                            {{ $jsonData->name_activity }}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                @php $shownActivities++; @endphp
+                                            @endif
+                                        @endforeach
+
+                                        @if (count($value) > $shownActivities)
                                             <div class="card-body">
                                                 <ul>
-                                                    <li class="text-body-table">{{$jsonData->name_activity}}</li>
+                                                    <li class="text-body-table">
+                                                        <span>...</span>
+                                                    </li>
                                                 </ul>
                                             </div>
-                                        @endforeach
+                                        @endif
                                     @endif
                                 @endforeach
+
                                 <!-- Pie de la tarjeta -->
                                 <div class="card-footer border-0 d-flex justify-content-between align-items-center"
                                      style="padding-left: 10px; padding-right: 10px;">
