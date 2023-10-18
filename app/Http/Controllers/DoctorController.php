@@ -161,12 +161,16 @@ class DoctorController extends Controller
         return view('doctor.activities', compact('activities', 'texto'));
     }
 
-    protected function deleteActivity($id){
-        $activities = Activities::find($id);
+    protected function deleteActivity(Request $request){
+        $activities = Activities::find($request->id);
 
         $activities->delete();
 
-        return redirect(route('activities'))->with('success', 'Actividad eliminada correctamente');
+        $this->Activities($request);
+
+//        dd($this->Activities($request));
+
+//        return redirect(route('activities'))->with('success', 'Actividad eliminada correctamente');
     }
 
     protected function dashboardPatient(Request $request){
