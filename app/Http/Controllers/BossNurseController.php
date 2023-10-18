@@ -42,6 +42,6 @@ class BossNurseController extends Controller
             ->orderBy('name','asc')
             ->paginate(8);
 
-        return view('doctor.dashboardpatient', compact('patients','activities', 'texto'));
+        return view('boss_nurse.pending', compact('patients','activities', 'texto'));
     }
 }
