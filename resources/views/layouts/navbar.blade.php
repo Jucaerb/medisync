@@ -45,7 +45,7 @@
                                     Consulta de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Pendientes</a></li>
+                                    <li><a class="dropdown-item" href="{{route('pending')}}">Pendientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -88,7 +88,7 @@
                                     Consulta de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Pendientes</a></li>
+                                    <li><a class="dropdown-item" href="{{route('pending')}}">Pendientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -132,7 +132,7 @@
                                     Consulta de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Pendientes</a></li>
+                                    <li><a class="dropdown-item" href="{{route('pending')}}">Pendientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -161,7 +161,7 @@
                                     Consulta de pacientes
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Pendientes</a></li>
+                                    <li><a class="dropdown-item" href="{{route('pending')}}">Pendientes</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
