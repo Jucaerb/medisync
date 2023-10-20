@@ -20,7 +20,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-4">
                     @foreach($patients as $patient)
                         <div class="col">
-                            <div class="card h-100">
+                            <div class="card" style="height: auto;">
                                 <!-- Encabezado de la tarjeta -->
                                 <div class="card-header border-0"
                                      style="display: flex; justify-content: space-between;">
@@ -32,45 +32,47 @@
                                     <i class="bi bi-person-square" style="font-size: 3.4rem;"></i>
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-md">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col" class="text-body">Actividad</th>
-                                                <th scope="col" class="text-body">Hora</th>
-                                                <th scope="col" style="max-width: 120px;"></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-{{--                                            @foreach($activities as $key => $value)--}}
-{{--                                                @if($key == $patient->id)--}}
-{{--                                                    @foreach($value as $jsonData)--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td class="text-body-table">--}}
-{{--                                                                <strong>{{$jsonData->name_activity}}</strong></td>--}}
-{{--                                                            <td class="text-body-table">{{$jsonData->schedule}}</td>--}}
-{{--                                                            <td>--}}
+                                <div class="card-content" style="max-height: 400px; overflow: auto;">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-md">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col" class="text-body">Actividad</th>
+                                                    <th scope="col" class="text-body">Hora</th>
+                                                    <th scope="col" style="max-width: 120px;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+{{--                                                @foreach($activities as $key => $value)--}}
+{{--                                                    @if($key == $patient->id)--}}
+{{--                                                        @foreach($value as $jsonData)--}}
+{{--                                                            <tr>--}}
+{{--                                                                <td class="text-body-table">--}}
+{{--                                                                    <strong>{{$jsonData->name_activity}}</strong></td>--}}
+{{--                                                                <td class="text-body-table">{{$jsonData->schedule}}</td>--}}
+{{--                                                                <td>--}}
 
-{{--                                                            </td>--}}
-{{--                                                            <td>--}}
-{{--                                                                <a>--}}
-{{--                                                                    <button type="button" data-bs-toggle="modal"--}}
-{{--                                                                            data---}}
-{{--                                                                            data-bs-target="#"--}}
-{{--                                                                            style="border: none; background: none">--}}
-{{--                                                                        <i class="bi bi-trash"--}}
-{{--                                                                           style="font-size: 1.4rem;"></i>--}}
-{{--                                                                    </button>--}}
+{{--                                                                </td>--}}
+{{--                                                                <td>--}}
+{{--                                                                    <a>--}}
+{{--                                                                        <button type="button" data-bs-toggle="modal"--}}
+{{--                                                                                data---}}
+{{--                                                                                data-bs-target="#"--}}
+{{--                                                                                style="border: none; background: none">--}}
+{{--                                                                            <i class="bi bi-eye-fill"--}}
+{{--                                                                               style="font-size: 1.4rem;"></i>--}}
+{{--                                                                        </button>--}}
 
-{{--                                                                </a>--}}
-{{--                                                            </td>--}}
-{{--                                                        </tr>--}}
-{{--                                                    @endforeach--}}
-{{--                                                @endif--}}
-{{--                                            @endforeach--}}
-                                            </tbody>
-                                        </table>
+{{--                                                                    </a>--}}
+{{--                                                                </td>--}}
+{{--                                                            </tr>--}}
+{{--                                                        @endforeach--}}
+{{--                                                    @endif--}}
+{{--                                                @endforeach--}}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Pie de la tarjeta -->
