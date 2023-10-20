@@ -19,7 +19,7 @@
                 <div class="row row-cols-1 row-cols-md-4 g-4">
                     @foreach($patients as $patient)
                         <div class="col">
-                            <div class="card h-100">
+                            <div class="card" style="height: auto;">
                                 <!-- Encabezado de la tarjeta -->
                                 <div class="card-header border-0"
                                      style="display: flex; justify-content: space-between;">
@@ -31,33 +31,37 @@
                                     <i class="bi bi-person-square" style="font-size: 3.4rem;"></i>
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
-                                @foreach($activities as $key => $value)
-                                    @if ($key == $patient->id && count($value) > 0)
-                                        @php $shownActivities = 0; @endphp
-                                        @foreach ($value as $jsonData)
-                                            @if ($shownActivities < 3)
+                                <div class="card-content" style="max-height: 200px; overflow: auto;">
+                                    @foreach($activities as $key => $value)
+                                        @if ($key == $patient->id && count($value) > 0)
+                                            @php $shownActivities = 0; @endphp
+                                            @foreach ($value as $jsonData)
+                                                @if ($shownActivities < 3)
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li class="text-body-table ">
+                                                                <i class="bi bi-check2 icon-negro">
+                                                                    {{ $jsonData->name_activity }}
+                                                                </i>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    @php $shownActivities++; @endphp
+                                                @endif
+                                            @endforeach
+
+                                            @if (count($value) > $shownActivities)
                                                 <div class="card-body">
                                                     <ul>
                                                         <li class="text-body-table">
-                                                            {{ $jsonData->name_activity }}
+                                                            <span>...</span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                @php $shownActivities++; @endphp
                                             @endif
-                                        @endforeach
-
-                                        @if (count($value) > $shownActivities)
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li class="text-body-table">
-                                                        <span>...</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         @endif
-                                    @endif
-                                @endforeach
+                                    @endforeach
+                                </div>
 
                                 <!-- Pie de la tarjeta -->
                                 <div class="card-footer border-0 d-flex justify-content-between align-items-center"
