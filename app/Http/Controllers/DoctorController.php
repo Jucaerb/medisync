@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Activities;
 use App\Models\Patient;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Attention;
 
 class DoctorController extends Controller
 {
@@ -118,10 +120,31 @@ class DoctorController extends Controller
 
     protected function saveActivity(Request $request) {
         try {
-            Activities::createActivity($request);
+            $createdActivity = Activities::createActivity($request);
         }catch (\Exception $exception){
             return redirect(route('activities'))->with('error', 'Ocurrió un error al crear la actividad');
         }
+
+        $start = Carbon::parse($createdActivity->create_date);
+        $end = Carbon::parse($createdActivity->suspension_date);
+        $countDays = $end->diffInDays($start);
+
+//        for ($i = 1; $i <= $countDays; $i++) {
+//            Attention::create([
+//                'date_for' => $start
+//            ]);
+//
+//            Activities::created([
+//
+//            ]);
+//
+//            $start->addHour(2);
+//
+//            if($start => $end){
+//                break;
+//            }
+//        }
+//        dd($createdActivity);
 
         return redirect(route('createactivity'))->with('success', 'Actividad creado correctamente');
     }

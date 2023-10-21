@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('medicine_id');
             $table->string('dose');
             $table->string('via');
-            $table->string('create_date');
-            $table->string('suspension_date');
+            $table->date('create_date');
+            $table->date('suspension_date');
             $table->string('observations');
             $table->string('status');
             $table->timestamps();

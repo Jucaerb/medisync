@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,8 +48,8 @@ class Activities extends Authenticatable
             "medicine_id" => $request->input('medicine_id'),
             "dose" => $request->input('dose'),
             "via" => $request->input('via'),
-            "create_date" => $request->input('create_date'),
-            "suspension_date" => $request->input('suspension_date'),
+            "create_date" => Carbon::create($request->input('create_date')),
+            "suspension_date" => Carbon::create($request->input('suspension_date')),
             "observations" => $request->input('observations'),
             "status" => 'ACTIVE',
         ]);

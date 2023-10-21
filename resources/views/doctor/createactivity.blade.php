@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Horario</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Horario Inicial</span>
                     <select id="schedule" name="schedule" class="form-select" aria-label="Default select example"
                             required>
                         <option disabled selected value>Selecciona una opción</option>

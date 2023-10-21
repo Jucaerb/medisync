@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('activity_name');
             $table->string('user_id');
             $table->string('hour');
+            $table->date('date_for');
             $table->string('comments');
             $table->string('permissions');
+            $table->string('status');
             $table->timestamps();
         });
     }
