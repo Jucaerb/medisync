@@ -126,7 +126,7 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Observaciones</span>
                     <input id="observations" name="observations" type="text" class="form-control"
                            aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" maxlength="200" required>
+                           aria-describedby="inputGroup-sizing-default" maxlength="200">
                 </div>
 
                 <div class="d-flex justify-content-start">
