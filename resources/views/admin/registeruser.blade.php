@@ -48,8 +48,6 @@
                         <option value="DOCTOR">Doctor</option>
                         <option value="BOSS_NURSE">Jefe de enfermeria</option>
                         <option value="NURSE">Enfermero</option>
-                        <option value="CARER">Cuidador</option>
-                        <option value="INVENTORY">Inventario</option>
                         <option value="ADMIN">Administrador</option>
                     </select>
                 </div>
