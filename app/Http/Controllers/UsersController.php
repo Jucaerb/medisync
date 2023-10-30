@@ -105,6 +105,7 @@ class UsersController extends Controller
         try {
             $user = User::find($request->user_id);
             $user->full_name = $request->full_name;
+            $user->password = $request->password;
             $user->username = $request->username;
             $user->identification_number = $request->identification_number;
             $user->email = $request->email;
