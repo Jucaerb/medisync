@@ -32,13 +32,13 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Identificación</span>
-                    <input id="identification_number" name="identification_number" type="number" class="form-control"
+                    <input id="identification_number" name="identification_number" type="text" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                            maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Correo electrónico</span>
-                    <input id="email" name="email" type="text" class="form-control" aria-label="Sizing example input"
+                    <input id="email" name="email" type="email" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default" maxlength="255" required>
                 </div>
                 <div class="input-group mb-3">
@@ -55,12 +55,12 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
                     <input id="password" name="password" type="password" class="form-control"
                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                           maxlength="255" required>
+                           minlength="10" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Confirmar contraseña</span>
                     <input id="confirm-password" name="confirm-password" type="password" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" maxlength="255" required>
+                           aria-describedby="inputGroup-sizing-default" minlength="10" required>
                 </div>
                 <div class="d-flex justify-content-start">
                     <div class="pr-5">
