@@ -39,8 +39,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function credentials(Request $request)
+    public function attemptLogin(Request $request)
     {
-        return['email' => $this->username(), 'password', 'status' => 'ACTIVE'];
+        return $this->guard()->attempt(
+            ['email' => $request->email, 'password' => $request->password, 'status' => 'ACTIVE']
+        );
     }
 }

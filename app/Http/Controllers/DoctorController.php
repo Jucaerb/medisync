@@ -6,6 +6,7 @@ use App\Models\Activities;
 use App\Models\Patient;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Attention;
 
@@ -119,32 +120,62 @@ class DoctorController extends Controller
     }
 
     protected function saveActivity(Request $request) {
+        $initialHour = Carbon::parse($request->get('schedule'))->hour;
+        switch ($request->get('temporality')){
+            case "diary":
+                $aux = 24;
+                break;
+            case "every 4 hours":
+                $aux = 4;
+                break;
+            case "every 8 hours":
+                $aux = 8;
+                break;
+            case "every 12 hours":
+                $aux = 12;
+                break;
+            case "weekly":
+                $aux = 168;
+                break;
+            case "monthly":
+                $aux = 730;
+                break;
+            case "every 2 days":
+                $aux = 48;
+                break;
+            case "every 3 days":
+                $aux = 72;
+                break;
+            case "every 4 days":
+                $aux = 96;
+                break;
+            case "every 5 days":
+                $aux = 120;
+                break;
+            case "every 6 days":
+                $aux = 144;
+                break;
+        }
+
+        $start = Carbon::parse($request->get('create_date'))->addHours($initialHour);
+        $end = Carbon::parse($request->get('suspension_date'));
         try {
             $createdActivity = Activities::createActivity($request);
         }catch (\Exception $exception){
             return redirect(route('activities'))->with('error', 'Ocurrió un error al crear la actividad');
         }
-
-        $start = Carbon::parse($createdActivity->create_date);
-        $end = Carbon::parse($createdActivity->suspension_date);
-        $countDays = $end->diffInDays($start);
-
-//        for ($i = 1; $i <= $countDays; $i++) {
-//            Attention::create([
-//                'date_for' => $start
-//            ]);
-//
-//            Activities::created([
-//
-//            ]);
-//
-//            $start->addHour(2);
-//
-//            if($start => $end){
-//                break;
-//            }
-//        }
-//        dd($createdActivity);
+        for ($start; $start <= $end; $start->addHour($aux)){
+            Attention::create([
+                'activity' => $createdActivity->id,
+                'activity_name' => $createdActivity->name_activity,
+                'user_id' => Auth::user()->id,
+                'hour' => $start->hour,
+                'date_for' => $start,
+                'comments' => 'nn',
+                'permissions' => $createdActivity->min_permissions,
+                'status' => 'ACTIVE'
+            ]);
+        }
 
         return redirect(route('createactivity'))->with('success', 'Actividad creado correctamente');
     }

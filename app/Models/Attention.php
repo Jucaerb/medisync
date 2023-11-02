@@ -18,6 +18,7 @@ class Attention extends Model
         'hour',
         'date_for',
         'comments',
-        'permissions'
+        'permissions',
+        'status'
     ];
 }
