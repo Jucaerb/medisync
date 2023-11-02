@@ -177,7 +177,7 @@ class DoctorController extends Controller
             ]);
         }
 
-        return redirect(route('createactivity'))->with('success', 'Actividad creado correctamente');
+        return redirect(route('createactivity'))->with('success', 'Actividad creada correctamente');
     }
 
     protected function updateActivity(Request $request){
