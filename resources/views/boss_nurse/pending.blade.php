@@ -44,32 +44,16 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-{{--                                                @foreach($activities as $key => $value)--}}
-{{--                                                    @if($key == $patient->id)--}}
-{{--                                                        @foreach($value as $jsonData)--}}
-{{--                                                            <tr>--}}
-{{--                                                                <td class="text-body-table">--}}
-{{--                                                                    <strong>{{$jsonData->name_activity}}</strong></td>--}}
-{{--                                                                <td class="text-body-table">{{$jsonData->schedule}}</td>--}}
-{{--                                                                <td>--}}
+                                                @foreach($attention as $key => $value)
+                                                    @if($key == $patient->id)
+                                                        @foreach($value as $jsonData)
 
-{{--                                                                </td>--}}
-{{--                                                                <td>--}}
-{{--                                                                    <a>--}}
-{{--                                                                        <button type="button" data-bs-toggle="modal"--}}
-{{--                                                                                data---}}
-{{--                                                                                data-bs-target="#"--}}
-{{--                                                                                style="border: none; background: none">--}}
-{{--                                                                            <i class="bi bi-eye-fill"--}}
-{{--                                                                               style="font-size: 1.4rem;"></i>--}}
-{{--                                                                        </button>--}}
 
-{{--                                                                    </a>--}}
-{{--                                                                </td>--}}
-{{--                                                            </tr>--}}
-{{--                                                        @endforeach--}}
-{{--                                                    @endif--}}
-{{--                                                @endforeach--}}
+
+                                                        @endforeach
+                                                    @endif
+
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

@@ -18,8 +18,8 @@
                 <!-- Inicio de las tarjetas de pacientes -->
                 <div class="row row-cols-1 row-cols-md-4 g-4">
                     @foreach($patients as $patient)
-                        <div class="col">
-                            <div class="card" style="height: auto;">
+                        <div class="col" style="display: flex; flex-direction: column;">
+                            <div class="card h-100" style="height: 200px;">
                                 <!-- Encabezado de la tarjeta -->
                                 <div class="card-header border-0"
                                      style="display: flex; justify-content: space-between;">
@@ -31,15 +31,15 @@
                                     <i class="bi bi-person-square" style="font-size: 3.4rem;"></i>
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
-                                <div class="card-content" style="max-height: 200px; overflow: auto;">
+                                <div class="card-content" style="flex-grow: 1; max-height: 200px; overflow: auto;">
+                                    @php $shownActivities = 0; @endphp
                                     @foreach($activities as $key => $value)
                                         @if ($key == $patient->id && count($value) > 0)
-                                            @php $shownActivities = 0; @endphp
                                             @foreach ($value as $jsonData)
                                                 @if ($shownActivities < 3)
                                                     <div class="card-body">
                                                         <ul>
-                                                            <li class="text-body-table ">
+                                                            <li class="text-body-table">
                                                                 <i class="bi bi-check2 icon-negro">
                                                                     {{ $jsonData->name_activity }}
                                                                 </i>
@@ -49,7 +49,6 @@
                                                     @php $shownActivities++; @endphp
                                                 @endif
                                             @endforeach
-
                                             @if (count($value) > $shownActivities)
                                                 <div class="card-body">
                                                     <ul>
@@ -61,15 +60,20 @@
                                             @endif
                                         @endif
                                     @endforeach
+                                    @if ($shownActivities == 0)
+                                        <i class="text-body-table" style="padding: 1rem;">No hay actividades.</i>
+                                    @endif
                                 </div>
-
                                 <!-- Pie de la tarjeta -->
                                 <div class="card-footer border-0 d-flex justify-content-between align-items-center"
                                      style="padding-left: 10px; padding-right: 10px;">
-                                    <a class="button-card a" href="{{route('activities', ['filter' => $patient->id])}}">Ver
+                                    <a class="button-card a align-items-center"
+                                       href="{{route('activities', ['filter' => $patient->id])}}">Ver
                                         todas</a>
                                 </div>
+
                             </div>
+
                         </div>
                     @endforeach
                 </div>
