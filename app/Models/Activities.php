@@ -59,11 +59,10 @@ class Activities extends Authenticatable
         return self::
         when((!empty($texto)), function ($cons) use ($texto){
             return  $cons->where('name_activity', 'LIKE', '%'.$texto.'%' )
-            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')->paginate(8);
+            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%');
         })
         ->when(($idPatient != null), function ($query) use ($idPatient){
-            return $query->where('id_patient', $idPatient)->paginate(8);
-        })
-        ;
+            return $query->where('id_patient', $idPatient);
+        })->orderBy('name_activity', 'asc')->paginate(8);
     }
 }
