@@ -28,7 +28,7 @@
                                         <p class="text-body-table"
                                            id="num_identification">{{ $patient->identification }}</p>
                                     </div>
-                                    <i class="bi bi-person-square" style="font-size: 3.4rem;"></i>
+{{--                                    <i class="bi bi-person-square" style="font-size: 3.4rem;"></i>--}}
                                 </div>
                                 <!-- Cuerpo de la tarjeta -->
                                 <div class="card-content" style="flex-grow: 1; max-height: 200px; overflow: auto;">
