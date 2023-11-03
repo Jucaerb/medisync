@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activities;
 use App\Models\Attention;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -44,5 +45,10 @@ class BossNurseController extends Controller
             ->paginate(8);
 
         return view('boss_nurse.pending', compact('patients','attention', 'texto'));
+    }
+
+    public function show($user_id){
+        $thisDay = Carbon::now()->format('Y-m-d');
+
     }
 }
