@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activities;
+use App\Models\Attention;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +32,7 @@ class BossNurseController extends Controller
 
     protected function pending(Request $request){
 
-        $activities = Activities::all()->groupBy( 'id_patient');
+        $attention = Attention::all()->groupBy( 'user_id');
 
         $texto=trim($request->get('texto'));
 
@@ -42,6 +43,6 @@ class BossNurseController extends Controller
             ->orderBy('name','asc')
             ->paginate(8);
 
-        return view('boss_nurse.pending', compact('patients','activities', 'texto'));
+        return view('boss_nurse.pending', compact('patients','attention', 'texto'));
     }
 }
