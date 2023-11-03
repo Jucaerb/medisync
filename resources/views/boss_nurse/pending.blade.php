@@ -47,12 +47,11 @@
                                                 @foreach($attention as $key => $value)
                                                     @if($key == $patient->id)
                                                         @foreach($value as $jsonData)
+{{--                                                            @if()--}}
 
-
-
+{{--                                                            @endif--}}
                                                         @endforeach
                                                     @endif
-
                                                 @endforeach
                                                 </tbody>
                                             </table>
