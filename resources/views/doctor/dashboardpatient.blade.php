@@ -16,7 +16,7 @@
                     </form>
                 </div>
                 <!-- Inicio de las tarjetas de pacientes -->
-                <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="row row-cols-1 row-cols-md-4 g-4" style="padding-top: 1rem;">
                     @foreach($patients as $patient)
                         <div class="col" style="display: flex; flex-direction: column;">
                             <div class="card h-100" style="height: 200px;">
@@ -61,7 +61,7 @@
                                         @endif
                                     @endforeach
                                     @if ($shownActivities == 0)
-                                        <i class="text-body-table" style="padding: 1rem;">No hay actividades.</i>
+                                        <p class="card-body">No hay actividades.</p>
                                     @endif
                                 </div>
                                 <!-- Pie de la tarjeta -->
