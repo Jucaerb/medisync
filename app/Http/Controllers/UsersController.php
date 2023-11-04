@@ -125,6 +125,6 @@ class UsersController extends Controller
             ->orderBy('full_name','asc')
             ->paginate(6);
 
-        return view('admin.users', compact('users','texto'));
+        return redirect(route('admin.users'));
     }
 }
