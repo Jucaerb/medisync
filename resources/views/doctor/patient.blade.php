@@ -4,7 +4,7 @@
 
     <div class="d-flex p-4">
         <div class="container">
-            <p class="card-title text-aling-left text-body-title pb-3">Mira tus pacientes activos</p>
+            <p class="card-title text-aling-left text-body-title pb-3">Mira tus pacientes</p>
             <div class="card mb-3">
                 <div class="card-header">
                     <form action="{{route('patient')}}" method="get">
