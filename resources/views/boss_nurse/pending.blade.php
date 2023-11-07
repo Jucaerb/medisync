@@ -50,17 +50,18 @@
                                                     @if($key == $patient->id && count($value) > 0)
                                                         @foreach($value as $jsonData)
                                                             @if($shownAttention <3)
-                                                            <div class="card-item">
-                                                                <div class="activity-info">
-                                                                    <p class="text-body-table">{{ $jsonData->activity_name }}</p>
-{{--                                                                    <p class="text-body-table">{{ $jsonData->date_for }}</p>--}}
-                                                                    <button type="button" data-bs-toggle="modal"
-                                                                            data-bs-target="#attentionModal{{''}}"
-                                                                            style="border: none; background: none">
-                                                                    <i class="bi bi-eye-fill" style="font-size: 1rem; "></i>
-                                                                    </button>
+                                                                <div class="card-item">
+                                                                    <div class="activity-info">
+                                                                        <p class="text-body-table">{{ $jsonData->activity_name }}</p>
+                                                                        {{--                                                                    <p class="text-body-table">{{ $jsonData->date_for }}</p>--}}
+                                                                        <button type="button" data-bs-toggle="modal"
+                                                                                data-bs-target="#attentionModal{{''}}"
+                                                                                style="border: none; background: none">
+                                                                            <i class="bi bi-eye-fill"
+                                                                               style="font-size: 1rem; "></i>
+                                                                        </button>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
                                                                 @php $shownAttention++; @endphp
                                                             @endif
                                                         @endforeach
@@ -84,8 +85,10 @@
                                     </div>
                                 </div>
                                 <!-- Pie de la tarjeta -->
-                                <div class="card-footer border-0 d-flex justify-content-between" style="margin-top: auto;">
-                                    <a class="button-card a" href="{{route('activities', ['filter' => $patient->id])}}">Ver todas</a>
+                                <div class="card-footer border-0 d-flex justify-content-between"
+                                     style="margin-top: auto;">
+                                    <a class="button-card a"
+                                       href="{{route('pendingList', ['filter' => $patient->id])}}">Ver todas</a>
                                 </div>
                             </div>
                         </div>
