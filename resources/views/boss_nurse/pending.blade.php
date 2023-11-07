@@ -41,18 +41,24 @@
                                 <!-- Cuerpo de la tarjeta -->
                                 <div class="card-content" style="overflow: auto;">
                                     <div class="card-body">
-                                        <div class="table-responsive" style="max-height: 175px;">
+                                        <div class="table-responsive" style="max-height: 180px;">
                                             <table class="table table-md">
                                                 <tbody>
                                                 @php $shownAttention = 0; @endphp
                                                 @foreach($attention as $key => $value)
+                                                    @include('boss_nurse.attentionModal')
                                                     @if($key == $patient->id && count($value) > 0)
                                                         @foreach($value as $jsonData)
                                                             @if($shownAttention <3)
                                                             <div class="card-item">
                                                                 <div class="activity-info">
                                                                     <p class="text-body-table">{{ $jsonData->activity_name }}</p>
-                                                                    <p class="text-body-table">{{ $jsonData->date_for }}</p>
+{{--                                                                    <p class="text-body-table">{{ $jsonData->date_for }}</p>--}}
+                                                                    <button type="button" data-bs-toggle="modal"
+                                                                            data-bs-target="#attentionModal{{''}}"
+                                                                            style="border: none; background: none">
+                                                                    <i class="bi bi-eye-fill" style="font-size: 1rem; "></i>
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                                 @php $shownAttention++; @endphp
