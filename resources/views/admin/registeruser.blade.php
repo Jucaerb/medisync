@@ -12,7 +12,7 @@
         </div>
     @endif
     <div class="d-flex justify-content-center align-items-center p-5">
-        <div class="card mb-3 border-0 " style="">
+        <div class="card mb-3 border-0 ">
             <a class="card-title text-body-title">Registra un nuevo empleado!</a>
             <p class="card-text">
             @include('admin.cancelModal')
