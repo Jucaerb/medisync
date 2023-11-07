@@ -55,7 +55,7 @@ class DoctorController extends Controller
             ->orderBy('name','asc')
             ->paginate(6);
 
-        return view('doctor.patient', compact('patients', 'texto'));
+        return redirect(route('patient'));
     }
 
     protected function activePatient(Request $request){
@@ -70,7 +70,7 @@ class DoctorController extends Controller
             ->orderBy('name','asc')
             ->paginate(6);
 
-        return view('doctor.patient', compact('patients', 'texto'));
+        return redirect(route('patient'));
     }
 
     protected function updatedPatient(request $request){
