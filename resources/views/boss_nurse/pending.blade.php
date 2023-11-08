@@ -55,7 +55,7 @@
                                                                         <p class="text-body-table">{{ $jsonData->activity_name }}</p>
                                                                         {{--                                                                    <p class="text-body-table">{{ $jsonData->date_for }}</p>--}}
                                                                         <button type="button" data-bs-toggle="modal"
-                                                                                data-bs-target="#attentionModal{{''}}"
+                                                                                data-bs-target="#attentionModal{{$patient->id}}"
                                                                                 style="border: none; background: none">
                                                                             <i class="bi bi-eye-fill"
                                                                                style="font-size: 1rem; "></i>
