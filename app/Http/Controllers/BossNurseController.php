@@ -59,12 +59,6 @@ class BossNurseController extends Controller
 
     protected function attentionModal($id, $activity_name)
     {
-
-        $patients = Patient::find($id);
-        $attention = Attention::find($activity_name);
-        $activities = Activities::where('id_patient', $id)->get();
-
-        return view('boss_nurse.registerAttention', compact('activities', 'attention', 'patients'));
     }
 
     protected function pendingList(Request $request)
@@ -79,9 +73,15 @@ class BossNurseController extends Controller
         return view('boss_nurse.pendingList', compact('attention', 'texto'));
     }
 
-    public function show($user_id)
+    protected function finishedAttention(Request $request)
     {
-        $thisDay = Carbon::now()->format('Y-m-d');
+        $texto = trim($request->get('texto'));
+        $attention = Attention::indexAttention(intval($request->get('filter')), $texto)
+            ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
+            ->join('patients', 'attention.user_id', '=', 'patients.id')
+            ->where('attention.status', 'INACTIVE')
+            ->paginate(8);
 
+        return view('boss_nurse.finishedAttention', compact('attention', 'texto'));
     }
 }
