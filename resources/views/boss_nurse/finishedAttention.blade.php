@@ -23,6 +23,7 @@
                                 <th scope="col" class="text-body">Medicamento</th>
                                 <th scope="col" class="text-body">Hora</th>
                                 <th scope="col" class="text-body">Permisos</th>
+                                <th scope="col" class="text-body">Comentarios</th>
                                 <th scope="col" class="text-body">Habitación</th>
                                 <th scope="col" class="text-body">Fecha</th>
                             </tr>
@@ -37,6 +38,7 @@
                                     <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
                                     <td class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</td>
                                     <td class="text-body-table">{{ __('passwords.'.$jsonData->min_permissions) }}</td>
+                                    <td class="text-body-table">{{ $jsonData->comments }}</td>
                                     <td class="text-body-table">{{ $jsonData->room }}</td>
                                     <td class="text-body-table">{{ $jsonData->date_for }}</td>
                                 </tr>
