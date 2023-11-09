@@ -34,8 +34,14 @@ class BossNurseController extends Controller
 
     protected function pending(Request $request){
 
-        $attention = Attention::all()->groupBy( 'user_id');
-
+        $attention = Attention::
+            where('attention.date_for', '=', Carbon::now()->format('Y-m-d'))
+            ->join('activities','attention.user_id','=', 'activities.id_patient')
+            ->join('patients','attention.user_id', '=', 'patients.id')
+            ->select('attention.id', 'activities.min_permissions', 'attention.activity_name', 'attention.user_id', 'activities.medicine_id', 'activities.via', 'activities.dose', 'attention.hour')
+            ->where('attention.status', 'ACTIVE')
+            ->get()
+;
         $texto=trim($request->get('texto'));
 
         $patients =DB::table('patients')
@@ -43,7 +49,8 @@ class BossNurseController extends Controller
             ->where('name','LIKE', '%'.$texto.'%')
             ->orWhere('identification', 'LIKE', '%'.$texto.'%')
             ->orderBy('name','asc')
-            ->paginate(8);
+            ->paginate(8)
+        ;
 
         return view('boss_nurse.pending', compact('patients', 'attention', 'texto'));
     }
@@ -58,27 +65,15 @@ class BossNurseController extends Controller
     }
 
     Protected function pendingList(Request $request){
-
         $texto=trim($request->get('texto'));
+        $attention = Attention::indexAttention(intval($request->get('filter')), $texto)
+            ->join('activities','attention.user_id','=', 'activities.id_patient')
+            ->join('patients','attention.user_id', '=', 'patients.id')
+            ->where('attention.status', 'ACTIVE')
+            ->paginate(8)
+        ;
 
-        $attention = Attention::indexAttention(intval($request->get('filter')), $texto);
-
-        $activities = DB::table('activities')
-            ->select('id','patient','name_activity','min_permissions','temporality',
-                'schedule','medicine_id','dose','via','observations','create_date','suspension_date')
-            ->where('name_activity', 'LIKE', '%'.$texto.'%' )
-            ->orWhere('min_permissions', 'LIKE', '%'.$texto.'%')
-            ->orderBy('name_activity')
-            ->paginate(6);
-
-        $patients =DB::table('patients')
-            ->select('id', 'identification','name','sex', 'birth_date','in_date','room','status')
-            ->where('name','LIKE', '%'.$texto.'%')
-            ->orWhere('identification', 'LIKE', '%'.$texto.'%')
-            ->orderBy('name','asc')
-            ->paginate(8);
-
-        return view('boss_nurse.pendingList', compact('activities', 'patients','attention', 'texto'));
+        return view('boss_nurse.pendingList', compact('attention', 'texto'));
     }
 
     public function show($user_id){

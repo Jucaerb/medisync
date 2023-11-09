@@ -170,7 +170,7 @@ class DoctorController extends Controller
                 'activity_name' => $createdActivity->name_activity,
                 'user_id' => Auth::user()->id,
                 'hour' => $start->hour,
-                'date_for' => $start,
+                'date_for' => $start->format('Y-m-d'),
                 'comments' => 'nn',
                 'permissions' => $createdActivity->min_permissions,
                 'status' => 'ACTIVE'

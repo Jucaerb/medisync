@@ -44,28 +44,25 @@
                                         <div class="table-responsive" style="max-height: 180px;">
                                             <table class="table table-md">
                                                 <tbody>
-                                                @php $shownAttention = 0; @endphp
-                                                @foreach($attention as $key => $value)
+                                                @php $shownAttention = 0 @endphp
+                                                @foreach($attention as $jsonData)
                                                     @include('boss_nurse.attentionModal')
-                                                    @if($key == $patient->id && count($value) > 0)
-                                                        @foreach($value as $jsonData)
-                                                            @if($shownAttention <3)
-                                                                <div class="card-item">
-                                                                    <div class="activity-info">
-                                                                        <p class="text-body-table">{{ $jsonData->activity_name }}</p>
-                                                                        {{--                                                                    <p class="text-body-table">{{ $jsonData->date_for }}</p>--}}
-                                                                        <button type="button" data-bs-toggle="modal"
-                                                                                data-bs-target="#attentionModal{{$patient->id}}"
-                                                                                style="border: none; background: none">
-                                                                            <i class="bi bi-eye-fill"
-                                                                               style="font-size: 1rem; "></i>
-                                                                        </button>
-                                                                    </div>
+                                                    @if($jsonData->user_id == $patient->id && count($attention) > 0)
+                                                        @if($shownAttention < 3)
+                                                            <div class="card-item">
+                                                                <div class="activity-info">
+                                                                    <p class="text-body-table">{{ $jsonData->activity_name }}</p>
+                                                                    <p class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</p>
+                                                                    <button type="button" data-bs-toggle="modal"
+                                                                            data-bs-target="#attentionModal{{$jsonData->id}}"
+                                                                            style="border: none; background: none">
+                                                                        <i class="bi bi-eye-fill"
+                                                                           style="font-size: 1rem; "></i>
+                                                                    </button>
                                                                 </div>
-                                                                @php $shownAttention++; @endphp
-                                                            @endif
-                                                        @endforeach
-                                                        @if (count($value) > $shownAttention)
+                                                            </div>
+                                                            @php $shownAttention++; @endphp
+                                                        @else
                                                             <div class="card-body">
                                                                 <ul>
                                                                     <li class="text-body-table">

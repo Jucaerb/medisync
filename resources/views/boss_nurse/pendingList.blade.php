@@ -28,26 +28,18 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @forelse ($attention as $atten)
-                                @foreach ($activities[$atten->patient_id] ?? [] as $jsonData)
-                                    @if (is_object($jsonData) && property_exists($jsonData, 'medicine_id'))
-                                        <tr>
-                                            <td class="text-body-table">
-                                                <strong>{{ $atten->activity_name }}</strong>
-                                            </td>
-                                            <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
-                                            <td class="text-body-table">{{ $atten->hour }}</td>
-                                            <td class="text-body-table">{{ $jsonData->min_permissions }}</td>
-                                            <td class="text-body-table">{{ $atten->patient->room }}</td>
-                                            <td class="text-body-table">{{ $atten->date_for }}</td>
-                                        </tr>
-                                    @endif
+                                @foreach ($attention as $jsonData)
+                                    <tr>
+                                        <td class="text-body-table">
+                                            <strong>{{ $jsonData->activity_name }}</strong>
+                                        </td>
+                                        <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
+                                        <td class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</td>
+                                        <td class="text-body-table">{{ $jsonData->min_permissions }}</td>
+                                        <td class="text-body-table">{{ $jsonData->room }}</td>
+                                        <td class="text-body-table">{{ $jsonData->date_for }}</td>
+                                    </tr>
                                 @endforeach
-                            @empty
-                                <tr>
-                                    <td colspan="7">No hay resultados</td>
-                                </tr>
-                            @endforelse
                             </tbody>
                         </table>
                     </div>

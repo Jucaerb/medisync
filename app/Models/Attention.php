@@ -37,6 +37,6 @@ class Attention extends Model
         })
             ->when(($user_id != null), function ($query) use ($user_id){
                 return $query->where('user_id', $user_id);
-            })->orderBy('activity_name', 'asc')->paginate(8);
+            })->orderBy('activity_name', 'asc');
     }
 }
