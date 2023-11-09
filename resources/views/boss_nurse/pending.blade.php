@@ -47,6 +47,7 @@
                                                 @php $shownAttention = 0 @endphp
                                                 @foreach($attention as $jsonData)
                                                     @include('boss_nurse.attentionModal')
+                                                    @include('boss_nurse.registerAttentionModal')
                                                     @if($jsonData->user_id == $patient->id && count($attention) > 0)
                                                         @if($shownAttention < 3)
                                                             <div class="card-item">
@@ -64,12 +65,14 @@
                                                             @php $shownAttention++; @endphp
                                                         @else
                                                             <div class="card-body">
+
                                                                 <ul>
                                                                     <li class="text-body-table">
                                                                         <span>...</span>
                                                                     </li>
                                                                 </ul>
                                                             </div>
+                                                            @break
                                                         @endif
                                                     @endif
                                                 @endforeach
