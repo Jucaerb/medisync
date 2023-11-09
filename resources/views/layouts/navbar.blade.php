@@ -49,7 +49,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Terminados</a></li>
+                                    <li><a class="dropdown-item" href="{{route('finishedattention')}}">Terminados</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -92,7 +92,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Terminados</a></li>
+                                    <li><a class="dropdown-item" href="{{route('finishedattention')}}">Terminados</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -136,7 +136,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Terminados</a></li>
+                                    <li><a class="dropdown-item" href="{{route('finishedattention')}}">Terminados</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -165,7 +165,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Terminados</a></li>
+                                    <li><a class="dropdown-item" href="{{route('finishedattention')}}">Terminados</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">

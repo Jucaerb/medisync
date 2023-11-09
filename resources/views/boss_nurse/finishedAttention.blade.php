@@ -3,10 +3,10 @@
 @section('content')
     <div class="d-flex p-4">
         <div class="container">
-            <p class="card-title text-aling-left text-body-title pb-3">Atenciones pendientes</p>
+            <p class="card-title text-aling-left text-body-title pb-3">Atenciones terminadas</p>
             <div class="card mb-3">
                 <div class="card-header">
-                    <form action="{{ route('pendingList') }}" method="get">
+                    <form action="{{ route('finishedattention') }}" method="get">
                         <div class="d-flex flex-row align-items-start">
                             <input type="text" class="form-control busqueda" name="texto" value="{{ $texto }}">
                             <input type="submit" class="btn btn-primary mx-2 button-buscar" value="Buscar">
@@ -36,7 +36,7 @@
                                     <td class="text-body-table">{{ $jsonData->activity_name }}</td>
                                     <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
                                     <td class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</td>
-                                    <td class="text-body-table">{{ $jsonData->min_permissions }}</td>
+                                    <td class="text-body-table">{{ __('passwords.'.$jsonData->min_permissions) }}</td>
                                     <td class="text-body-table">{{ $jsonData->room }}</td>
                                     <td class="text-body-table">{{ $jsonData->date_for }}</td>
                                 </tr>
