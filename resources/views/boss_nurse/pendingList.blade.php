@@ -28,18 +28,28 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($attention as $jsonData)
-                                    <tr>
-                                        <td class="text-body-table">
-                                            <strong>{{ $jsonData->activity_name }}</strong>
-                                        </td>
-                                        <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
-                                        <td class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</td>
-                                        <td class="text-body-table">{{ $jsonData->min_permissions }}</td>
-                                        <td class="text-body-table">{{ $jsonData->room }}</td>
-                                        <td class="text-body-table">{{ $jsonData->date_for }}</td>
-                                    </tr>
-                                @endforeach
+                            @foreach ($attention as $jsonData)
+                                @include('boss_nurse.attentionModal')
+                                @include('boss_nurse.registerAttentionModal')
+                                <tr>
+                                    <td class="text-body-table">
+                                        <strong>{{ $jsonData->activity_name }}</strong>
+                                    </td>
+                                    <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
+                                    <td class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</td>
+                                    <td class="text-body-table">{{ $jsonData->min_permissions }}</td>
+                                    <td class="text-body-table">{{ $jsonData->room }}</td>
+                                    <td class="text-body-table">{{ $jsonData->date_for }}</td>
+                                    <td>
+                                        <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#attentionModal{{$jsonData->id}}"
+                                                style="border: none; background: none">
+                                            <i class="bi bi-eye-fill"
+                                               style="font-size: 1rem; "></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
