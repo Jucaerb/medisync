@@ -24,7 +24,7 @@ class Attention extends Model
     ];
 
     public static function attetionPatient($request) {
-        return Attention::updatedOrCreate(['id' => $request],[
+        return Attention::updateOrCreate(['id' => $request],[
             "status" => 'INACTIVE',
         ]);
     }
@@ -37,6 +37,6 @@ class Attention extends Model
         })
             ->when(($user_id != null), function ($query) use ($user_id){
                 return $query->where('user_id', $user_id);
-            })->orderBy('activity_name', 'asc');
+            })->orderBy('date_for', 'asc')->paginate(8);
     }
 }
