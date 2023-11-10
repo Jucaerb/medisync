@@ -55,6 +55,7 @@ Route::middleware(['authUser:DOCTOR,ADMIN,NURSE,BOSS_NURSE'])->group(function ()
     Route::get('/attention', [App\Http\Controllers\BossNurseController::class, 'attentionModal'])->name('attetion');
     Route::get('/pendinglist', [App\Http\Controllers\BossNurseController::class, 'pendingList'])->name('pendingList');
     Route::get('/finishedattention', [App\Http\Controllers\BossNurseController::class, 'finishedAttention'])->name('finishedattention');
+    Route::put('/attentionmodal', [App\Http\Controllers\BossNurseController::class, 'attentionModal'])->name('attentionmodal');
 
 });
 
