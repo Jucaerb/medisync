@@ -29,14 +29,14 @@
                 </div>
             </div>
 
-            {{--            <form action="{{route('activePatient', ['id' => $patient->id])}}" method="POST">--}}
-            {{--                @csrf--}}
-            {{--                @method('PUT')--}}
-                        <div class="modal-footer">
-                            <button class="button-modal" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Guardar</button>
-                            <button class="btn btn-secondary" data-bs-toggle="modal">Cancelar</button>
-                        </div>
-            {{--            </form>--}}
+            <form action="{{route('attentionmodal', ['id' => $jsonData->id])}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="modal-footer" style="border-top: none;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="button-modal">Confirmar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
