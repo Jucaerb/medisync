@@ -41,10 +41,11 @@ class BossNurseController extends Controller
             ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
             ->join('patients', 'attention.user_id', '=', 'patients.id')
             ->select('attention.id', 'activities.min_permissions', 'attention.activity_name', 'attention.user_id',
-                'activities.medicine_id', 'activities.via', 'activities.dose', 'attention.hour','patients.name','patients.room',
-                'activities.observations','attention.date_for')
+                'activities.medicine_id', 'activities.via', 'activities.dose', 'attention.hour', 'patients.name', 'patients.room',
+                'activities.observations', 'attention.date_for')
             ->where('attention.status', 'ACTIVE')
             ->get();
+
         $texto = trim($request->get('texto'));
 
         $patients = DB::table('patients')
@@ -57,18 +58,23 @@ class BossNurseController extends Controller
         return view('boss_nurse.pending', compact('patients', 'attention', 'texto'));
     }
 
-    protected function attentionModal($id, $activity_name)
+    protected function attentionModal(Request $request)
     {
+        Attention::attetionPatient(intval($request->id));
+
+        $texto = trim($request->get('texto'));
+
+        return redirect(route('pending'));
     }
 
     protected function pendingList(Request $request)
     {
         $texto = trim($request->get('texto'));
+
         $attention = Attention::indexAttention(intval($request->get('filter')), $texto)
             ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
             ->join('patients', 'attention.user_id', '=', 'patients.id')
-            ->where('attention.status', 'ACTIVE')
-            ->paginate(8);
+            ->where('attention.status', 'ACTIVE');
 
         return view('boss_nurse.pendingList', compact('attention', 'texto'));
     }
@@ -76,10 +82,10 @@ class BossNurseController extends Controller
     protected function finishedAttention(Request $request)
     {
         $texto = trim($request->get('texto'));
-        $attention = Attention::indexAttention(intval($request->get('filter')), $texto)
+        $attention = Attention::
+        where('attention.status', 'INACTIVE')
             ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
             ->join('patients', 'attention.user_id', '=', 'patients.id')
-            ->where('attention.status', 'INACTIVE')
             ->paginate(8);
 
         return view('boss_nurse.finishedAttention', compact('attention', 'texto'));
