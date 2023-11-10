@@ -1,4 +1,5 @@
-<div class="modal fade" id="attentionModal{{$jsonData->id}}" aria-hidden="true" aria-labelledby="attentionModalToggleLabel" tabindex="-1">
+<div class="modal fade" id="attentionModal{{$jsonData->id}}" aria-hidden="true"
+     aria-labelledby="attentionModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
@@ -21,7 +22,9 @@
                             <p class="text-body"><strong>Dosis:</strong> {{ $jsonData->dose }}</p>
                         </li>
                         <li>
-                            <p class="text-body"><strong>Hora:</strong> {{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</p>
+                            <p class="text-body">
+                                <strong>Hora:</strong> {{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}
+                            </p>
                         </li>
                         <li>
                             <p class="text-body"><strong>Fecha:</strong> {{$jsonData->date_for}}</p>
@@ -33,7 +36,8 @@
                             <p class="text-body"><strong>Habitación:</strong> {{$jsonData->room}}</p>
                         </li>
                         <li>
-                            <p class="text-body">El usuario que realice esta operación debe <br>ser mínimo un <strong>{{$jsonData->min_permissions}}</strong> </p>
+                            <p class="text-body">El usuario que realice esta operación debe <br>ser mínimo un
+                                <strong>{{ __('passwords.'.$jsonData->min_permissions) }}</strong></p>
                         </li>
                         <li>
                             <p class="text-body"><strong>Observaciones:</strong> {{$jsonData->observations}}</p>
@@ -43,7 +47,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="button-modal" data-bs-target="#registerAttentionModal{{$jsonData->id}}" data-bs-toggle="modal">Atender</button>
+                <button class="button-modal" data-bs-target="#registerAttentionModal{{$jsonData->id}}"
+                        data-bs-toggle="modal">Atender
+                </button>
                 <button class="btn btn-secondary" data-bs-toggle="modal">Cancelar</button>
             </div>
 

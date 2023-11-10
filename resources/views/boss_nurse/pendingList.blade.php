@@ -37,7 +37,7 @@
                                     </td>
                                     <td class="text-body-table">{{ $jsonData->medicine_id }}</td>
                                     <td class="text-body-table">{{ \Carbon\Carbon::createFromFormat('H',$jsonData->hour)->format('H:i') }}</td>
-                                    <td class="text-body-table">{{ $jsonData->min_permissions }}</td>
+                                    <td class="text-body-table">{{ __('passwords.'.$jsonData->min_permissions) }}</td>
                                     <td class="text-body-table">{{ $jsonData->room }}</td>
                                     <td class="text-body-table">{{ $jsonData->date_for }}</td>
                                     <td>
