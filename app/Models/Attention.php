@@ -24,7 +24,8 @@ class Attention extends Model
     ];
 
     public static function attetionPatient($request) {
-        return Attention::updateOrCreate(['id' => $request],[
+        return Attention::updateOrCreate(['id' => $request->id],[
+            "comments" => $request->comments,
             "status" => 'INACTIVE',
         ]);
     }
@@ -33,10 +34,14 @@ class Attention extends Model
         return self::
             when((!empty($texto)), function ($cons) use ($texto){
                 return $cons->where('activity_name', 'LIKE', '%'.$texto.'%')
-                    ->orWhere('permissions', 'LIKE', '%'.$texto.'%');
+                    ->orWhere('permissions', 'LIKE', '%'.$texto.'%')->join('activities', 'attention.user_id', '=', 'activities.id_patient')
+                    ->join('patients', 'attention.user_id', '=', 'patients.id')
+                    ->where('attention.status', 'ACTIVE')->paginate(8);
         })
             ->when(($user_id != null), function ($query) use ($user_id){
                 return $query->where('user_id', $user_id);
-            })->orderBy('date_for', 'asc')->paginate(8);
+            })->orderBy('date_for', 'asc')->join('activities', 'attention.user_id', '=', 'activities.id_patient')
+            ->join('patients', 'attention.user_id', '=', 'patients.id')
+            ->where('attention.status', 'ACTIVE')->paginate(8);
     }
 }

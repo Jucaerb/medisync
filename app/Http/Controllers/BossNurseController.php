@@ -60,7 +60,7 @@ class BossNurseController extends Controller
 
     protected function attentionModal(Request $request)
     {
-        Attention::attetionPatient(intval($request->id));
+        Attention::attetionPatient($request);
 
         $texto = trim($request->get('texto'));
 
@@ -72,9 +72,8 @@ class BossNurseController extends Controller
         $texto = trim($request->get('texto'));
 
         $attention = Attention::indexAttention(intval($request->get('filter')), $texto)
-            ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
-            ->join('patients', 'attention.user_id', '=', 'patients.id')
-            ->where('attention.status', 'ACTIVE');
+
+        ;
 
         return view('boss_nurse.pendingList', compact('attention', 'texto'));
     }
