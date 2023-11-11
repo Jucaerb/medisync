@@ -164,11 +164,12 @@ class DoctorController extends Controller
         }catch (\Exception $exception){
             return redirect(route('activities'))->with('error', 'Ocurrió un error al crear la actividad');
         }
+        $patient = Patient::find($request->input('patient'));
         for ($start; $start <= $end; $start->addHour($aux)){
             Attention::create([
                 'activity' => $createdActivity->id,
                 'activity_name' => $createdActivity->name_activity,
-                'user_id' => Auth::user()->id,
+                'user_id' => $patient->id,
                 'hour' => $start->hour,
                 'date_for' => $start->format('Y-m-d'),
                 'comments' => 'nn',
