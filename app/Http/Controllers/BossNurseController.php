@@ -84,6 +84,12 @@ class BossNurseController extends Controller
         where('attention.status', 'INACTIVE')
             ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
             ->join('patients', 'attention.user_id', '=', 'patients.id')
+            ->when((!empty($texto)), function ($cons) use ($texto){
+                return $cons->where('activity_name', 'LIKE', '%'.$texto.'%')
+                    ->orWhere('permissions', 'LIKE', '%'.$texto.'%')
+                    ->orWhere('patients.name', 'LIKE', '%'.$texto.'%')
+                    ->orWhere('activities.medicine_id', 'LIKE', '%'.$texto.'%');
+            })
             ->orderBy('patients.name', 'asc')
             ->paginate(8);
 
