@@ -72,7 +72,6 @@ class BossNurseController extends Controller
         $texto = trim($request->get('texto'));
 
         $attention = Attention::indexAttention(intval($request->get('filter')), $texto)
-
         ;
 
         return view('boss_nurse.pendingList', compact('attention', 'texto'));
@@ -85,6 +84,7 @@ class BossNurseController extends Controller
         where('attention.status', 'INACTIVE')
             ->join('activities', 'attention.user_id', '=', 'activities.id_patient')
             ->join('patients', 'attention.user_id', '=', 'patients.id')
+            ->orderBy('patients.name', 'asc')
             ->paginate(8);
 
         return view('boss_nurse.finishedAttention', compact('attention', 'texto'));
